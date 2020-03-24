@@ -92,3 +92,63 @@ if( ! function_exists( 'mathomo_register_nav_menus' ) ):
 endif;
 add_action( 'after_setup_theme', 'mathomo_register_nav_menus' );
 
+if( ! function_exists( 'mathomo_register_sidebars' ) ):
+    /**
+     * Register sidebars
+     */
+    function mathomo_register_sidebars() {
+        // Shared accross all sidebars
+        $const = array(
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>'
+        );
+
+        // Page Sidebar
+        register_sidebar(
+            array_merge(
+                array(
+                    'id' => 'page-sidebar',
+                    'name' => __( 'Page Sidebar', 'mathomo' ),
+                    'description' => __( 'Shows up on the left of a page or blog post', 'mathomo' )
+                ),
+                $const
+            )
+        );
+
+        // For more control footer sidebar spilt into 3 cols
+        register_sidebar(
+            array_merge(
+                array(
+                    'id' => 'footer-col-1',
+                    'name' => __( 'Footer Column 1', 'mathomo' ),
+                    'description' => __( 'Shows up in the footer of a page or blog post', 'mathomo' )
+                ),
+                $const
+            )
+        );
+        register_sidebar(
+            array_merge(
+                array(
+                    'id' => 'footer-col-2',
+                    'name' => __( 'Footer Column 2', 'mathomo' ),
+                    'description' => __( 'Shows up in the footer of a page or blog post', 'mathomo' )
+                ),
+                $const
+            )
+        );
+        register_sidebar(
+            array_merge(
+                array(
+                    'id' => 'footer-col-3',
+                    'name' => __( 'Footer Column 3', 'mathomo' ),
+                    'description' => __( 'Shows up in the footer of a page or blog post', 'mathomo' )
+                ),
+                $const
+            )
+        );
+    }
+endif;
+add_action( 'widgets_init', 'mathomo_register_sidebars' );
+
