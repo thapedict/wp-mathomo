@@ -16,3 +16,68 @@ function mathomo_get_directory_uri( $append = '' ) {
     return esc_url( get_template_directory_uri() . $append );
 }
 
+if( ! function_exists( 'mathomo_setup_theme_support' ) ):
+    /**
+     * Setup theme support
+     */
+    function mathomo_setup_theme_support() {
+        // translation Ready
+        load_theme_textdomain( 'mathomo', get_template_directory() . '/languages' );
+
+        // RSS feed links
+        add_theme_support( 'automatic-feed-links' );
+
+        // Handling of document title
+        add_theme_support( 'title-tag' );
+
+        // Post thumbnails
+        add_theme_support( 'post-thumbnails' );
+
+        // We love HTML5
+        add_theme_support( 'html5',
+            array(
+                'search-form',
+                'comment-form',
+                'comment-list',
+                'gallery',
+                'caption'
+            )
+        );
+
+        // Post formats
+        add_theme_support( 'post-formats',
+            array(
+                'aside',
+                'gallery',
+                'image',
+                'quote'
+            )
+        );
+
+        // Custom logo
+        add_theme_support( 'custom-logo',
+            array(
+                'width' => 300,
+                'height' => 100,
+                'flex-width' => true
+            )
+        );
+
+        // Custom header
+        add_theme_support( 'custom-header' );
+
+        // Custom Background
+        add_theme_support( 'custom-background' );
+
+        // Selective refresh for widgets
+        add_theme_support( 'customize-selective-refresh-widgets' );
+
+        // Customize the editor
+        add_editor_style();
+
+        // Gutenberg: Theme can do full width
+        add_theme_support( 'align-wide' );
+    }
+endif;
+add_action( 'after_setup_theme', 'mathomo_setup_theme_support' );
+
