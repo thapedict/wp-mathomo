@@ -81,3 +81,14 @@ if( ! function_exists( 'mathomo_setup_theme_support' ) ):
 endif;
 add_action( 'after_setup_theme', 'mathomo_setup_theme_support' );
 
+if( ! function_exists( 'mathomo_register_nav_menus' ) ):
+    /**
+     * Register navmenus
+     */
+    function mathomo_register_nav_menus() {
+        // We only have the header menu
+        register_nav_menu( 'header', __( 'Header Menu', 'mathomo' ) );
+    }
+endif;
+add_action( 'after_setup_theme', 'mathomo_register_nav_menus' );
+
