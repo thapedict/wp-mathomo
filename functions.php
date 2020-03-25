@@ -59,7 +59,8 @@ if( ! function_exists( 'mathomo_setup_theme_support' ) ):
             array(
                 'width' => 300,
                 'height' => 100,
-                'flex-width' => true
+                'flex-width' => true,
+                'flex-height' => true
             )
         );
 
@@ -175,4 +176,6 @@ endif;
  * Set Content Width
  */
 $content_width = 800;
+
+
 
