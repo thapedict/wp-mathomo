@@ -174,3 +174,8 @@ if( ! function_exists( 'mathomo_is_jetpack_activated' ) ):
     }
 endif;
 
+/**
+ * Set Content Width
+ */
+$content_width = 800;
+
