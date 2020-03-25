@@ -63,9 +63,6 @@ if( ! function_exists( 'mathomo_setup_theme_support' ) ):
             )
         );
 
-        // Custom header
-        add_theme_support( 'custom-header' );
-
         // Custom Background
         add_theme_support( 'custom-background' );
 
