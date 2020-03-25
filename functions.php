@@ -163,3 +163,14 @@ if( ! function_exists( 'mathomo_is_woocommerce_activated' ) ):
     }
 endif;
 
+if( ! function_exists( 'mathomo_is_jetpack_activated' ) ):
+    /**
+     * Check to see if Jetpack is activated.
+     * 
+     * @return bool TRUE if active, false if not.
+     */
+    function mathomo_is_jetpack_activated() {
+        return ( defined( 'JETPACK__VERSION' ) && class_exists( 'Jetpack' ) );
+    }
+endif;
+
