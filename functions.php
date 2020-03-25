@@ -152,3 +152,14 @@ if( ! function_exists( 'mathomo_register_sidebars' ) ):
 endif;
 add_action( 'widgets_init', 'mathomo_register_sidebars' );
 
+if( ! function_exists( 'mathomo_is_woocommerce_activated' ) ):
+    /**
+     * Check to see if WooCommerce is activated.
+     * 
+     * @return bool TRUE if active, false if not.
+     */
+    function mathomo_is_woocommerce_activated() {
+        return ( defined( 'WC_VERSION' ) && class_exists( 'WooCommerce' ) );
+    }
+endif;
+
