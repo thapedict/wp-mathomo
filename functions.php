@@ -177,5 +177,38 @@ endif;
  */
 $content_width = 800;
 
+if( ! function_exists( 'mathomo_enqueue_scripts' ) ):
+    /**
+     * Enqueue needed frontend scripts and styles
+     */
+    function mathomo_enqueue_scripts() {
+        $CSS = get_template_directory_uri() . "/css/";
+        $JS = get_template_directory_uri() . "/css/";
 
+        // Grid + Reset, then Basic Styling
+        wp_enqueue_style( 'mathomo-grid-basic', $CSS . 'grid-basic.min.css', false, MATHOMO_VERSION );
+        // Fontawesome
+        wp_enqueue_style( 'fontawesome', $CSS . 'fontawesome-all.min.css', false, '5.2.0' );
+        // MobileNav
+        wp_enqueue_style( 'mathomo-mobilenav', $CSS . 'jquery.mobilenav.css', false, '1.0.0' );
+        // ScrollToTop
+        wp_enqueue_style( 'mathomo-scrolltotop', $CSS . 'jquery.scrolltotop.css', false, '1.0.0' );
+        // Main Style
+        wp_enqueue_style( 'mathomo-style', get_stylesheet_uri(), array( 'mathomo-grid-basic', 'fontawesome', 'mathomo-mobilenav', 'mathomo-scrolltotop' ), MATHOMO_VERSION );
+
+        // MobileNav
+        wp_enqueue_script( 'mathomo-mobilenav', $JS . 'jquery.mobilenav.js', array( 'jquery' ), '1.0.0' );
+        // ScrollToTop
+        wp_enqueue_script( 'mathomo-scrolltotop', $JS . 'jquery.scrolltotop.js', array( 'jquery' ), '1.0.0' );
+        // Main JS Script
+        wp_enqueue_script( 'mathomo-main', $JS . 'main.js', array( 'mathomo-mobilenav', 'mathomo-scrolltotop' ), MATHOMO_VERSION );
+
+        // Comment script
+        if( mathomo_show_page_comments() || mathomo_show_post_comments() ) {
+            if ( comments_open() && get_option( 'thread_comments' ) ) {
+                wp_enqueue_script( 'comment-reply' );
+            }
+        }
+    }
+endif;
 
