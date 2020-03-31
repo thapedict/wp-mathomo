@@ -243,3 +243,8 @@ function mathomo_before_header() {
 }
 add_action('body_header_before', 'mathomo_before_header');
 
+
+// Load template helper functions
+require_once get_template_directory() . '/inc/class-htmler.php';
+require_once get_template_directory() . '/inc/template-functions.php';
+
