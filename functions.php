@@ -211,4 +211,23 @@ if( ! function_exists( 'mathomo_enqueue_scripts' ) ):
         }
     }
 endif;
+add_action( 'wp_enqueue_scripts', 'mathomo_enqueue_scripts' );
+
+/**
+ * Should theme show page comments.
+ * 
+ * @return bool TRUE to show comments, FALSE to hide.
+ */
+function mathomo_show_page_comments() {
+    return (bool) apply_filters( __FUNCTION__, get_theme_mod( 'show_page_comments', false ) );
+}
+
+/**
+ * Should theme show post comments.
+ * 
+ * @return bool TRUE to show comments, FALSE to hide.
+ */
+function mathomo_show_post_comments() {
+    return (bool) apply_filters( __FUNCTION__, get_theme_mod( 'show_post_comments', true ) );
+}
 
