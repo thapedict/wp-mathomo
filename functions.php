@@ -231,3 +231,15 @@ function mathomo_show_post_comments() {
     return (bool) apply_filters( __FUNCTION__, get_theme_mod( 'show_post_comments', true ) );
 }
 
+/**
+ * WordPress v5.2 requires themes to support wp_body_open.
+ */
+function mathomo_before_header() {
+    if( function_exists('wp_body_open') ) {
+        wp_body_open();
+    } else {
+        do_action('wp_body_open');
+    }
+}
+add_action('body_header_before', 'mathomo_before_header');
+
