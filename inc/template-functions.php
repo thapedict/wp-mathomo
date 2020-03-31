@@ -41,3 +41,17 @@ if( ! function_exists( 'mathomo_print_site_header' ) ):
         HTMLER::div_raw_e( $content, array( 'id' => $args[ 'wrapper_id' ], 'class' => $args[ 'wrapper_class' ] ) );
     }
 endif;
+
+if( ! function_exists( 'mathomo_print_header_menu' ) ):
+    /**
+     * Prints header menu
+     */
+    function mathomo_print_header_menu() {
+        wp_nav_menu(
+            array(
+                'theme_location' => 'header',
+                'menu_id' => 'header-menu'
+            )
+            );
+    }
+endif;
