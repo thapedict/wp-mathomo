@@ -55,3 +55,17 @@ if( ! function_exists( 'mathomo_print_header_menu' ) ):
             );
     }
 endif;
+
+if( ! function_exists( 'mathomo_print_posts_navigation' ) ):
+    /**
+     * Print of posts navigation
+     */
+    function mathomo_print_posts_navigation() {
+        the_posts_navigation(
+            array( 
+                    'prev_text' => __('&larr; Previous Posts', 'tdt-one'),
+                    'next_text' => __('Next Posts &rarr;', 'tdt-one')
+            )
+        );
+    }
+endif;
