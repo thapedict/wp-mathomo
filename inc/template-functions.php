@@ -80,3 +80,14 @@ if( ! function_exists( 'mathomo_print_the_date' ) ):
         echo $date;
     }
 endif;
+
+if( ! function_exists( 'mathomo_get_permalink' ) ):
+    /**
+     * Return escaped permalink.
+     * 
+     * @return string escaped permalink.
+     */
+    function mathomo_get_permalink() {
+        return esc_url( get_the_permalink() );
+    }
+endif;
