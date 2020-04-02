@@ -69,3 +69,14 @@ if( ! function_exists( 'mathomo_print_posts_navigation' ) ):
         );
     }
 endif;
+
+if( ! function_exists( 'mathomo_print_the_date' ) ):
+    /**
+     * Showing of the post date.
+     */
+    function mathomo_print_the_date( $format = null ) {
+        $date = get_the_date( $format );
+
+        echo $date;
+    }
+endif;
