@@ -102,7 +102,7 @@ if( ! function_exists( 'mathomo_print_post_thumbnail' ) ):
         }
         
         // if post doesn't have a featured image
-        $default_img_src = apply_filters( 'mathomo_default_post_thumbnail', mathomo_get_directory_uri( '/assets/img/thumbnailx150.png') );
+        $default_img_src = apply_filters( 'mathomo_default_post_thumbnail', mathomo_get_uri( '/assets/img/thumbnailx150.png') );
 
         $thumbnail = has_post_thumbnail() ? get_the_post_thumbnail( null, array( 150, 150 ) ): sprintf( '<img class="attachment-post-thumbnail" src="%s" alt="%s" />', esc_url( $default_img_src), esc_attr( get_the_title() ) );
 
