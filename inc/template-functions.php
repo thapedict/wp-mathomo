@@ -91,3 +91,21 @@ if( ! function_exists( 'mathomo_get_permalink' ) ):
         return esc_url( get_the_permalink() );
     }
 endif;
+
+if( ! function_exists( 'mathomo_print_post_thumbnail' ) ):
+    /**
+     * Print post thumbnail (150x150)
+     */
+    function mathomo_print_post_thumbnail( $before = '<div class="post-thumbnail">', $after = '</div>' ) {
+		if ( post_password_required() || is_attachment() ) {
+			return;
+        }
+        
+        // if post doesn't have a featured image
+        $default_img_src = apply_filters( 'mathomo_default_post_thumbnail', mathomo_get_directory_uri( '/assets/img/thumbnailx150.png') );
+
+        $thumbnail = has_post_thumbnail() ? get_the_post_thumbnail( null, array( 150, 150 ) ): sprintf( '<img class="attachment-post-thumbnail" src="%s" alt="%s" />', esc_url( $default_img_src), esc_attr( get_the_title() ) );
+
+        echo $before, $thumbnail, $after;
+    }
+endif;
