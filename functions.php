@@ -182,8 +182,8 @@ if( ! function_exists( 'mathomo_enqueue_scripts' ) ):
      * Enqueue needed frontend scripts and styles
      */
     function mathomo_enqueue_scripts() {
-        $CSS = get_template_directory_uri() . "/css/";
-        $JS = get_template_directory_uri() . "/css/";
+        $CSS = get_template_directory_uri() . "/assets/css/";
+        $JS = get_template_directory_uri() . "/assets/js/";
 
         // Grid + Reset, then Basic Styling
         wp_enqueue_style( 'mathomo-grid-basic', $CSS . 'grid-basic.min.css', false, MATHOMO_VERSION );
