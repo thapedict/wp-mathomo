@@ -151,3 +151,25 @@ if( ! function_exists( 'mathomo_print_post_pages' ) ):
         }
     }
 endif;
+
+if( ! function_exists( 'mathomo_get_read_more_text' ) ):
+    /**
+     *  Returns the read more text
+     * 
+     * @return string The read more
+     */
+    function mathomo_get_read_more_text() {
+        return sprintf(
+			wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', '_s' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
+			get_the_title()
+		);
+    }
+endif;
