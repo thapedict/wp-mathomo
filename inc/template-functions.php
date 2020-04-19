@@ -133,3 +133,21 @@ if( ! function_exists( 'mathomo_edit_post_link' ) ):
         );
     }
 endif;
+
+if( ! function_exists( 'mathomo_print_post_pages' ) ):
+    /**
+     *  Print post pages
+     */
+    function mathomo_print_post_pages() {
+        global $numpages;
+            
+        if( $numpages > 1 ) {
+            wp_link_pages(
+                array(
+                    'before' => '<div class="post-pages">' . __( 'Pages:', 'mathomo' ),
+                    'after' => '</div>'
+                )
+            );          
+        }
+    }
+endif;
