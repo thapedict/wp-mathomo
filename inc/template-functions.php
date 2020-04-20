@@ -189,3 +189,34 @@ if( ! function_exists( 'mathomo_prev_next_post_link' ) ):
         }
     }
 endif;
+
+if( ! function_exists( 'mathomo_get_the_date' ) ):
+    /**
+     * Get the date of current post.
+     * 
+     * @return string HTML with the date
+     */
+    function mathomo_get_the_date( $include_last_mod = false ) {
+        $time_string = sprintf(
+            '<time class="post-entry-date published" datetime="%1$s">%2$s</time>',
+                esc_attr( get_the_date( DATE_W3C ) ),
+                esc_html( get_the_date() )
+        );
+
+        if( $include_last_mod ):
+            if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+                $time_string .= '<span class="post-last-modified">, ' . __( 'Last Modified: ', 'mathomo' );
+
+                $time_string .= sprintf(
+                    '<time class="post-entry-date updated" datetime="%1$s">%2$s</time>',
+                        esc_attr( get_the_modified_date( DATE_W3C ) ),
+                        esc_html( get_the_modified_date() )
+                );
+
+                $time_string .= '</span>';
+            }
+        endif;
+
+		return '<span class="post-date">' . __( 'Posted on ') . $time_string . '</span>';
+    }
+endif;
