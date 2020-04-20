@@ -173,3 +173,19 @@ if( ! function_exists( 'mathomo_get_read_more_text' ) ):
 		);
     }
 endif;
+
+if( ! function_exists( 'mathomo_prev_next_post_link' ) ):
+    /**
+     *  Prints previous & next post links
+     */
+    function mathomo_prev_next_post_link() {
+        $prev_next = get_previous_post_link( '<div class="nav-previous">%link</div>', '&laquo; %title' );
+        $prev_next .= get_next_post_link( '<div class="nav-next">%link</div>', '%title &raquo;' );
+
+        if( $prev_next ) {
+            $aria_label = HTMLER::span( __( 'Post navigation', 'mathomo' ), array( 'class' => 'screen-reader-text' ) );
+        
+            HTMLER::div_raw_e( $aria_label . $prev_next, array( 'class' => 'post-navigation' ) );
+        }
+    }
+endif;
