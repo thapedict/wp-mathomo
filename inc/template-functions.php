@@ -205,19 +205,21 @@ if( ! function_exists( 'mathomo_get_the_date' ) ):
 
         if( $include_last_mod ):
             if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-                $time_string .= '<span class="post-last-modified">, ' . __( 'Last Modified: ', 'mathomo' );
-
-                $time_string .= sprintf(
+                $last_mod = sprintf(
                     '<time class="post-entry-date updated" datetime="%1$s">%2$s</time>',
                         esc_attr( get_the_modified_date( DATE_W3C ) ),
                         esc_html( get_the_modified_date() )
                 );
 
-                $time_string .= '</span>';
+                /* translators: %s: The last modified date */
+                $last_mod = sprintf( __( 'Last Modified: %s', 'mathomo' ), $last_mod );
+
+                $time_string .= HTMLER::span_raw( $last_mod, array( 'class' => 'post-last-modified' ) );
             }
         endif;
 
-		return '<span class="post-date">' . __( 'Posted on ', 'mathomo' ) . $time_string . '</span>';
+        /* translators: %s: time string */
+		return '<span class="post-date">' . sprintf( __( 'Posted on %s', 'mathomo' ), $time_string ) . '</span>';
     }
 endif;
 
@@ -228,11 +230,17 @@ if( ! function_exists( 'mathomo_print_post_meta' ) ):
     function mathomo_print_post_meta() {
         print '<div class="post-meta">';
             $author_link = HTMLER::a( get_the_author(), array( 'href' => get_author_posts_url( get_the_author_meta( 'ID' ) ) ) );
-            HTMLER::span_raw_e( __( 'By', 'mathomo' ) . $author_link, array( 'class' => 'post-author' ) );
+            /* translators: %s: author link */
+            $author_link = sprintf( __( 'By %s', 'mathomo' ), $author_link );
+
+            HTMLER::span_raw_e( $author_link, array( 'class' => 'post-author' ) );
 
             echo mathomo_get_the_date();
 
-            HTMLER::span_raw_e( __( 'Posted in', 'mathomo' ) . get_the_category_list( ', ' ), array( 'class' => 'post-author' ) );
+            /* translators: %s: the category list */
+            $posted_in = sprintf( __( 'Posted in %s', 'mathomo' ), get_the_category_list( ', ' ) );
+
+            HTMLER::span_raw_e( $posted_in, array( 'class' => 'post-author' ) );
         print '</div>';
     }
 endif;
@@ -242,6 +250,7 @@ if( ! function_exists( 'mathomo_get_theme_credits' ) ):
      *  Return theme designer credits
      */
     function mathomo_get_theme_credits() {
+        /* translators: %s: link to theme designer */
         return sprintf( __( 'Designed By %s', 'mathomo' ), '<a href="https://thapedict.co.za/">Thapedict</a>' );
     }
 endif;
