@@ -7,6 +7,9 @@
 ?>
 
 <footer>
+<?php
+    get_sidebar( 'footer' );
+?>
     <section id="footer-strip">
         <div class="container">
             <div class="theme-credits-wrap">
