@@ -245,3 +245,14 @@ if( ! function_exists( 'mathomo_get_theme_credits' ) ):
         return sprintf( __( 'Designed By %s', 'mathomo' ), '<a href="https://thapedict.co.za/">Thapedict</a>' );
     }
 endif;
+
+if( ! function_exists( 'mathomo_get_theme_copyright' ) ):
+    /**
+     * Return copyright text.
+     */
+    function mathomo_get_theme_copyright() {
+        $copyright = '&copy;' . date( 'Y' ) . ' | ' . get_bloginfo( 'name', 'display' );
+
+        return get_theme_mod( 'copyright_text', $copyright );
+    }
+endif;
