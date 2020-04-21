@@ -236,3 +236,12 @@ if( ! function_exists( 'mathomo_print_post_meta' ) ):
         print '</div>';
     }
 endif;
+
+if( ! function_exists( 'mathomo_get_theme_credits' ) ):
+    /**
+     *  Return theme designer credits
+     */
+    function mathomo_get_theme_credits() {
+        return sprintf( __( 'Designed By %s', 'mathomo' ), '<a href="https://thapedict.co.za/">Thapedict</a>' );
+    }
+endif;
