@@ -1,6 +1,6 @@
 <?php
 /**
- * HTMLER: Safe html (Because writing escaping functions is very tedious)
+ * HTMLER: The HTML HELPER for safe html output
  *
  *  @package Mathomo
  *  @version 1.0.1
