@@ -247,7 +247,9 @@ endif;
 
 if( ! function_exists( 'mathomo_get_theme_credits' ) ):
     /**
-     *  Return theme designer credits
+     *  Return theme designer credits.
+     * 
+     * @return string Theme credit.
      */
     function mathomo_get_theme_credits() {
         /* translators: %s: link to theme designer */
@@ -258,6 +260,8 @@ endif;
 if( ! function_exists( 'mathomo_get_theme_copyright' ) ):
     /**
      * Return copyright text.
+     * 
+     * @return string Theme copyright text.
      */
     function mathomo_get_theme_copyright() {
         $copyright = '&copy;' . date( 'Y' ) . ' | ' . get_bloginfo( 'name', 'display' );
