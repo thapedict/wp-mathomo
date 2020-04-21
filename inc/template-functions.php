@@ -217,6 +217,22 @@ if( ! function_exists( 'mathomo_get_the_date' ) ):
             }
         endif;
 
-		return '<span class="post-date">' . __( 'Posted on ') . $time_string . '</span>';
+		return '<span class="post-date">' . __( 'Posted on ', 'mathomo' ) . $time_string . '</span>';
+    }
+endif;
+
+if( ! function_exists( 'mathomo_print_post_meta' ) ):
+    /**
+     *  Print post meta
+     */
+    function mathomo_print_post_meta() {
+        print '<div class="post-meta">';
+            $author_link = HTMLER::a( get_the_author(), array( 'href' => get_author_posts_url( get_the_author_meta( 'ID' ) ) ) );
+            HTMLER::span_raw_e( __( 'By', 'mathomo' ) . $author_link, array( 'class' => 'post-author' ) );
+
+            echo mathomo_get_the_date();
+
+            HTMLER::span_raw_e( __( 'Posted in', 'mathomo' ) . get_the_category_list( ', ' ), array( 'class' => 'post-author' ) );
+        print '</div>';
     }
 endif;
