@@ -3,7 +3,7 @@
  * HTMLER: The HTML HELPER for safe html output
  *
  *  @package Mathomo
- *  @version 1.0.1
+ *  @version 1.2.0
  */
 
 /**
@@ -93,7 +93,39 @@ class HTMLER {
     }
 
     /**
+     *  Safetly wraps content with tag and escapes (using wp_kses) everything
+     * 
+     * @since 1.2.0
+     *
+     *  @param  string  $tag        the tag to wrap the content with.
+     *  @param  string  $content    The content.
+     *  @param  array   $attr       An array of attributes.
+     *
+     *  @return string  html string
+     */
+    public static function kses( $tag, $content, array $attr = array() ) {
+        $attr = static::attr( $attr );
+        
+        return sprintf( '<%1$s%2$s>%3$s</%1$s>', $tag, $attr,  wp_kses( $content, 'post' ) );
+    }
+
+    /**
+     *  Prints out unsafe wrapped content
+     *
+     *  @since 1.2.0
+     *
+     *  @param  string  $tag        the tag to wrap the content with.
+     *  @param  string  $content    The content.
+     *  @param  array   $attr       An array of attributes.
+     */
+    public static function kses_e( $tag, $content, array $attr = array() ) {
+        echo static::kses( $tag, $content, $attr );
+    }
+
+    /**
      *  Handling of common HTML tags without expicitly declaring them
+     * 
+     *      Since 1.2.0: can now catch 'kses' calls. e.g. div_kses_e
      *
      *  @param string $function_name the cunction being called.
      *  @param array $arguments the args passed to the function.
@@ -138,6 +170,18 @@ class HTMLER {
                 $arguments = array_merge( array( $match[ 'tag' ] ), $arguments );
 
                 call_user_func_array( array( $class, 'wrap_raw_e' ), $arguments );
+            }
+        } elseif ( preg_match( '#^(?<tag>[a-z]+|h[1-6])_kses$#', $function_name, $match ) ) {
+            if ( static::valid_tag( $match[ 'tag' ] ) ) {
+                $arguments = array_merge( array( $match[ 'tag' ] ), $arguments );
+
+                return call_user_func_array( array( $class, 'kses' ), $arguments );
+            }
+        } elseif ( preg_match( '#^(?<tag>[a-z]+|h[1-6])_kses_e$#', $function_name, $match ) ) {
+            if ( static::valid_tag( $match[ 'tag' ] ) ) {
+                $arguments = array_merge( array( $match[ 'tag' ] ), $arguments );
+
+                call_user_func_array( array( $class, 'kses_e' ), $arguments );
             }
         } else {
             throw new Exception( "Invalid static function call: HTMLER::{$function_name}" );
