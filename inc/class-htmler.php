@@ -21,7 +21,7 @@ class HTMLER {
      *  @return string  html string
      */
     public static function wrap( $tag, $content, array $attr = array() ) {
-        $attr = self::attr( $attr );
+        $attr = static::attr( $attr );
 
         return sprintf( '<%1$s%2$s>%3$s</%1$s>', $tag, $attr, esc_html( $content ) );
     }
@@ -36,7 +36,7 @@ class HTMLER {
      *  @return string  html string
      */
     public static function wrap_raw( $tag, $content, array $attr = array() ) {
-        $attr = self::attr( $attr );
+        $attr = static::attr( $attr );
 
         return sprintf( '<%1$s%2$s>%3$s</%1$s>', $tag, $attr, $content );
     }
@@ -76,7 +76,7 @@ class HTMLER {
      *  @param  array   $attr       An array of attributes.
      */
     public static function wrap_e( $tag, $content, array $attr = array() ) {
-        echo self::wrap( $tag, $content, $attr );
+        echo static::wrap( $tag, $content, $attr );
     }
 
     /**
@@ -89,7 +89,7 @@ class HTMLER {
      *  @param  array   $attr       An array of attributes.
      */
     public static function wrap_raw_e( $tag, $content, array $attr = array() ) {
-        echo self::wrap_raw( $tag, $content, $attr );
+        echo static::wrap_raw( $tag, $content, $attr );
     }
 
     /**
@@ -103,39 +103,41 @@ class HTMLER {
      *  @return string|void string of function doesn't print
      */
     public static function __callStatic( $function_name, $arguments ) {
+        $class = get_called_class();
+
         // validate tag? Let's assume it's a div
         // expecting: div, div_e, div_raw, div_raw_e
         if ( preg_match( '#^(?<tag>[a-z]+|h[1-6])$#', $function_name ) ) {
             $arguments = array_merge( array( $function_name ), $arguments );
 
-            if ( self::valid_tag( $function_name ) ) {
-                return call_user_func_array( 'HTMLER::wrap', $arguments );
-            } elseif ( self::valid_nct( $function_name ) ) {
-                return call_user_func_array( 'HTMLER::nct', $arguments );
+            if ( static::valid_tag( $function_name ) ) {
+                return call_user_func_array( array( $class, 'wrap' ), $arguments );
+            } elseif ( static::valid_nct( $function_name ) ) {
+                return call_user_func_array( array( $class, 'nct' ), $arguments );
             } else {
                 throw new Exception( 'Invalid Tag: ' . $function_name );
             }
         } elseif ( preg_match( '#^(?<tag>[a-z]+|h[1-6])_e$#', $function_name, $match ) ) {
             $arguments = array_merge( array( $match[ 'tag' ] ), $arguments );
 
-            if ( self::valid_tag( $match[ 'tag' ] ) ) {
-                call_user_func_array( 'HTMLER::wrap_e', $arguments );
-            } elseif ( self::valid_nct( $match[ 'tag' ] ) ) {
-                call_user_func_array( 'HTMLER::nct_e', $arguments );
+            if ( static::valid_tag( $match[ 'tag' ] ) ) {
+                call_user_func_array( array( $class, 'wrap_e' ), $arguments );
+            } elseif ( static::valid_nct( $match[ 'tag' ] ) ) {
+                call_user_func_array( array( $class, 'nct_e' ), $arguments );
             } else {
                 throw new Exception( 'Invalid Tag: ' . $function_name );
             }
         } elseif ( preg_match( '#^(?<tag>[a-z]+|h[1-6])_raw$#', $function_name, $match ) ) {
-            if ( self::valid_tag( $match[ 'tag' ] ) ) {
+            if ( static::valid_tag( $match[ 'tag' ] ) ) {
                 $arguments = array_merge( array( $match[ 'tag' ] ), $arguments );
 
-                return call_user_func_array( 'HTMLER::wrap_raw', $arguments );
+                return call_user_func_array( array( $class, 'wrap_raw' ), $arguments );
             }
         } elseif ( preg_match( '#^(?<tag>[a-z]+|h[1-6])_raw_e$#', $function_name, $match ) ) {
-            if ( self::valid_tag( $match[ 'tag' ] ) ) {
+            if ( static::valid_tag( $match[ 'tag' ] ) ) {
                 $arguments = array_merge( array( $match[ 'tag' ] ), $arguments );
 
-                call_user_func_array( 'HTMLER::wrap_raw_e', $arguments );
+                call_user_func_array( array( $class, 'wrap_raw_e' ), $arguments );
             }
         } else {
             throw new Exception( "Invalid static function call: HTMLER::{$function_name}" );
@@ -172,7 +174,7 @@ class HTMLER {
      *  @return string formatted HTML
      */
     public static function nct( $tag, array $attr ) {
-        $attr = self::attr( $attr );
+        $attr = static::attr( $attr );
 
         return sprintf( '<%1$s%2$s />', $tag, $attr );
     }
@@ -184,7 +186,7 @@ class HTMLER {
      *  @param array $attr the list of attributes.
      */
     public static function nct_e( $tag, array $attr ) {
-        echo self::nct( $tag, $attr );
+        echo static::nct( $tag, $attr );
     }
 
     /**
@@ -217,7 +219,7 @@ class HTMLER {
                 unset( $attr[ 'href' ] );
             }
 
-            $attr = $href . self::attr( $attr );
+            $attr = $href . static::attr( $attr );
         }
 
         return sprintf( '<a%s>%s</a>', $attr, esc_html( $content ) );
@@ -232,7 +234,7 @@ class HTMLER {
      *  @param  array   $attr       An array of attributes.
      */
     public static function a_e( $content, array $attr = array() ) {
-        echo self::a( $content, $attr );
+        echo static::a( $content, $attr );
     }
 
     /**
@@ -249,7 +251,7 @@ class HTMLER {
             $src = sprintf( ' src="%s"', esc_url( $attr[ 'src' ] ) );
         }
 
-        $attr = $src . self::attr( $attr );
+        $attr = $src . static::attr( $attr );
 
         return sprintf( '<img%s />', $attr );
     }
@@ -262,6 +264,6 @@ class HTMLER {
      *  @param  array   $attr       An array of attributes.
      */
     public static function img_e( array $attr ) {
-        echo self::img( $attr );
+        echo static::img( $attr );
     }
 }
