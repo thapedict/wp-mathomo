@@ -10,7 +10,7 @@
     <?php
         do_action( 'before_post_content' );
 
-        the_title( '<h1 class="post-title">', '</h1>' );
+        the_title( '<h1 class="page-title">', '</h1>' );
 
         mathomo_print_post_meta();
 
