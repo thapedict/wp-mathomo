@@ -255,16 +255,7 @@ class HTMLER {
      *  @return string  html string
      */
     public static function a( $content,  array $attr = array() ) {
-        if( ! empty( $attr ) ) {
-            $href = '';
-
-            if( isset( $attr[ 'href' ] ) ) {
-                $href = sprintf( ' href="%s"', esc_url( $attr[ 'href' ] ) );
-                unset( $attr[ 'href' ] );
-            }
-
-            $attr = $href . static::attr( $attr );
-        }
+        $attr = static::a_attr( $attr );
 
         return sprintf( '<a%s>%s</a>', $attr, esc_html( $content ) );
     }
