@@ -50,9 +50,10 @@ if( ! function_exists( 'mathomo_print_header_menu' ) ):
         wp_nav_menu(
             array(
                 'theme_location' => 'header',
-                'menu_id' => 'header-menu'
+                'menu_id' => 'header-menu',
+                'menu_class' => 'nav-menu'
             )
-            );
+        );
     }
 endif;
 
