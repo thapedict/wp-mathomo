@@ -104,7 +104,7 @@ class HTMLER {
      *  @return string  html string
      */
     public static function kses( $tag, $content, array $attr = array() ) {
-        $attr = static::attr( $attr );
+        $attr = $tag ===  'a' ? static::a_attr( $attr ): static::attr( $attr );
         
         return sprintf( '<%1$s%2$s>%3$s</%1$s>', $tag, $attr,  wp_kses( $content, 'post' ) );
     }
