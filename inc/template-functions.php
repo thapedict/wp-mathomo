@@ -16,7 +16,7 @@ if( ! function_exists( 'mathomo_print_site_header' ) ):
         $defaults = array(
             'wrapper_id' => '',
             'wrapper_class' => 'site-header',
-            'print_description' => false
+            'print_description' => true
         );
 
         $args = wp_parse_args( $defaults, $args );
