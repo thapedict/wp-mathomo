@@ -282,6 +282,28 @@ class HTMLER {
     }
 
     /**
+     * Handles the escaping of anchor tag attributes
+     * 
+     * @param array $attr The attributes to escape.
+     * 
+     * @return string With the escaped attribute string.
+     */
+    protected static function a_attr( array $attr = array() ) {
+        if( ! empty( $attr ) ) {
+            $href = '';
+
+            if( isset( $attr[ 'href' ] ) ) {
+                $href = sprintf( ' href="%s"', esc_url( $attr[ 'href' ] ) );
+                unset( $attr[ 'href' ] );
+            }
+
+            return $href . static::attr( $attr );
+        }
+
+        return '';
+    }
+
+    /**
      * Handles the img tag since src need url escaping
      * 
      *  @param  array   $attr       An array of attributes.
