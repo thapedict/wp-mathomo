@@ -26,7 +26,7 @@ do_action('body_header_before');
 
 <header>
     <div class="container">
-        <div class="site-header-wrap">
+        <div class="site-header-wrap ts-sm-2 ts-dl-1-3">
         <?php
             mathomo_print_site_header();
             
