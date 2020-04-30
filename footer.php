@@ -14,8 +14,8 @@
         <div class="container">
             <div class="theme-credits-wrap">
                 <?php
-                    HTMLER::span_kses_e( mathomo_get_theme_credits(), array( 'class' => 'theme-credits' ) );
                     HTMLER::span_kses_e( mathomo_get_theme_copyright(), array( 'class' => 'copyright-notice' ) );
+                    HTMLER::span_kses_e( mathomo_get_theme_credits(), array( 'class' => 'theme-credits' ) );
                 ?>
             </div>
         </div>
