@@ -265,7 +265,7 @@ if( ! function_exists( 'mathomo_get_theme_copyright' ) ):
      * @return string Theme copyright text.
      */
     function mathomo_get_theme_copyright() {
-        $copyright = '&copy;' . date( 'Y' ) . ' | ' . get_bloginfo( 'name', 'display' );
+        $copyright = '&copy;' . date( 'Y' ) . ' - ' . get_bloginfo( 'name', 'display' );
 
         return get_theme_mod( 'copyright_text', $copyright );
     }
