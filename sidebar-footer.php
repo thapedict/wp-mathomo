@@ -7,7 +7,7 @@
 ?>
 <section id="widget-area">
     <div class="container">
-        <div class="wrap ts-ns-3">
+        <div class="footer-cols ts-ns-3">
             <div id="col-1">
                 <?php
                     dynamic_sidebar( 'footer-col-1' );
