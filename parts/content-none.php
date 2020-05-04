@@ -6,7 +6,7 @@
  */
 ?>
 
-<article class="page-content">
+<article id="post-0" class="no-results nothing-found">
 <?php
 if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
