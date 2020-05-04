@@ -6,7 +6,7 @@
  */
 ?>
 
-<div class="page-content">
+<article class="page-content">
 <?php
 if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -38,4 +38,4 @@ else :
 
 endif;
 ?>
-</div><!-- .page-content -->
+</article><!-- .page-content -->
