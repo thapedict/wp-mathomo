@@ -24,7 +24,7 @@ if ( is_home() && current_user_can( 'publish_posts' ) ) :
     );
 
 else :
-    HTMLER::h1_e( __( 'Page Not Found', 'mathomo' ), array( 'class' => 'page-title' ) );
+    HTMLER::h4_e( __( 'Oops! Nothing Found', 'mathomo' ), array( 'class' => 'page-title' ) );
     
     $error_msg = is_search() ?
         // for search
