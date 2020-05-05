@@ -9,7 +9,7 @@
 <article id="post-0" class="no-results nothing-found">
 <?php
 
-HTMLER::h1_e( __( 'Oops! Nothing Found', 'mathomo' ), array( 'class' => 'page-title' ) );
+HTMLER::h3_e( __( 'Oops! Nothing Found', 'mathomo' ) );
 
 echo '<div class="post-content">';
 
