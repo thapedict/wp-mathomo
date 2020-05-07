@@ -185,7 +185,9 @@ if( ! function_exists( 'mathomo_prev_next_post_link' ) ):
 
         if( $prev_next ) {
             $aria_label = HTMLER::span( __( 'Post navigation', 'mathomo' ), array( 'class' => 'screen-reader-text' ) );
-        
+
+            $prev_next = HTMLER::div_kses( $prev_next, array( 'class' => 'nav-links' ) );
+
             HTMLER::div_raw_e( $aria_label . $prev_next, array( 'class' => 'post-navigation' ) );
         }
     }
