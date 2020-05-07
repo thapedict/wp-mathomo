@@ -1196,6 +1196,9 @@ input[type=submit],
 input[type=reset] {
   padding: 0.5em 0.8em; }
 
+a.button {
+  text-decoration: none; }
+
 /**
 * Default CSS menu
 * @version 1.0.0
