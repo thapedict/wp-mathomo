@@ -7,7 +7,7 @@
 
  ?>
 
-<div id="main-content" class="main-loop">
+<div id="main-content" class="main-loop no-thumbnail">
     <?php
     while( have_posts() ) {
         the_post();
