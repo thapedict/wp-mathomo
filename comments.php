@@ -15,15 +15,17 @@ echo '<div class="post-comments">';
 
     if( have_comments() ) {
         // show comments
-        wp_list_comments(
-            array(
-                'avatar_size' => 48,
-                'short_ping' => true,
-                'style' => 'div'
-                )
-        );
+        echo '<div class="older-comments">';
+                wp_list_comments(
+                    array(
+                        'avatar_size' => 48,
+                        'short_ping' => true,
+                        'style' => 'div'
+                        )
+                );
 
-        the_comments_navigation();
+                the_comments_navigation();
+        echo '</div>';
     } else {
         // No comments yet
         if ( comments_open() ) {
