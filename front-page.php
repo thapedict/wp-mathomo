@@ -12,8 +12,8 @@ get_header();
 <section id="main">
     <div class="container">
     <?php
-        if( is_home() && is_front_page() ) {
-            /* Blog Page */
+        if( is_home() ) {
+            /* Blog Index Page */
             if( have_posts() ) {
                 get_template_part( 'parts/loops/main' );
             } else {
