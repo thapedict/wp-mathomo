@@ -14,7 +14,7 @@
 
         mathomo_print_post_meta();
 
-        if( has_post_thumbnail() ) {
+        if( has_post_thumbnail() && ! post_password_required() ) {
             print '<div class="post-thumbnail">';
                 the_post_thumbnail( array( 1024, 1024 ) );
             print '</div>';
