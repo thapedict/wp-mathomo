@@ -199,30 +199,40 @@ if( ! function_exists( 'mathomo_get_the_date' ) ):
      * 
      * @return string HTML with the date
      */
-    function mathomo_get_the_date( $include_last_mod = false ) {
-        $time_string = sprintf(
+    function mathomo_get_the_date() {
+        $posted_on = $updated_on = '';
+
+        /* translators: %s: posted on date */
+        $posted_on_text = esc_html( __( 'Posted on', 'mathomo' ) );
+        /* translators: %s: The last modified date */
+        $updated_on_text = esc_html( __( 'Last Modified', 'mathomo' ) );
+
+        if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+            $updated_date = sprintf(
+                '<time class="post-entry-date updated" datetime="%1$s">%2$s</time>',
+                    esc_attr( get_the_modified_date( DATE_W3C ) ),
+                    esc_html( get_the_modified_date() )
+            );
+
+            
+            $updated_date = sprintf( '<span class="screen-reader-text">%1$s</span> %2$s', $updated_on_text , $updated_date );
+
+            $updated_on = HTMLER::span_raw( $updated_date, array( 'class' => 'post-last-modified', 'title' => $updated_on_text ) );
+        }
+
+        $posted_date = sprintf(
             '<time class="post-entry-date published" datetime="%1$s">%2$s</time>',
                 esc_attr( get_the_date( DATE_W3C ) ),
                 esc_html( get_the_date() )
         );
 
-        if( $include_last_mod ):
-            if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-                $last_mod = sprintf(
-                    '<time class="post-entry-date updated" datetime="%1$s">%2$s</time>',
-                        esc_attr( get_the_modified_date( DATE_W3C ) ),
-                        esc_html( get_the_modified_date() )
-                );
+        $posted_date = sprintf( '<span class="screen-reader-text">%1$s</span> %2$s', $posted_on_text , $posted_on_text );
 
-                /* translators: %s: The last modified date */
-                $last_mod = sprintf( __( 'Last Modified: %s', 'mathomo' ), $last_mod );
+        $posted_on_class = $updated_on ? 'screen-reader-text': 'post-posted-on';
+        $posted_on = HTMLER::span_raw( $updated_date, array( 'class' => $posted_on_class, 'title' => $posted_on_text ) );
 
-                $time_string .= HTMLER::span_raw( $last_mod, array( 'class' => 'post-last-modified' ) );
-            }
-        endif;
-
-        /* translators: %s: time string */
-		return '<span class="post-date">' . sprintf( __( 'Posted on %s', 'mathomo' ), $time_string ) . '</span>';
+        
+		return '<span class="post-date">' . $posted_on . $updated_on . '</span>';
     }
 endif;
 
