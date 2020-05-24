@@ -188,7 +188,7 @@ if( ! function_exists( 'mathomo_prev_next_post_link' ) ):
 
             $prev_next = HTMLER::div_kses( $prev_next, array( 'class' => 'nav-links' ) );
 
-            HTMLER::div_raw_e( $aria_label . $prev_next, array( 'class' => 'post-navigation' ) );
+            HTMLER::nav_raw_e( $aria_label . $prev_next, array( 'class' => 'navigation post-navigation' ) );
         }
     }
 endif;
