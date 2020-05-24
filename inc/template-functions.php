@@ -226,10 +226,12 @@ if( ! function_exists( 'mathomo_get_the_date' ) ):
                 esc_html( get_the_date() )
         );
 
-        $posted_date = sprintf( '<span class="screen-reader-text">%1$s</span> %2$s', $posted_on_text , $posted_on_text );
+        $posted_date = sprintf( '<span class="screen-reader-text">%1$s</span> %2$s', $posted_on_text , $posted_date );
 
-        $posted_on_class = $updated_on ? 'screen-reader-text': 'post-posted-on';
-        $posted_on = HTMLER::span_raw( $updated_date, array( 'class' => $posted_on_class, 'title' => $posted_on_text ) );
+        // Determine class to use: We will hide if we have an updated on date
+        $posted_on_class = $updated_on ? 'post-posted-on screen-reader-text': 'post-posted-on';
+        
+        $posted_on = HTMLER::span_raw( $posted_date, array( 'class' => $posted_on_class, 'title' => $posted_on_text ) );
 
         
 		return '<span class="post-date">' . $posted_on . $updated_on . '</span>';
