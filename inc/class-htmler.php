@@ -200,7 +200,7 @@ class HTMLER {
             'a', 'b', 'i', 'small', 'span', 'label', 'button',          // Inline
             'sub', 'sup',
             'p', 'blockquote', 'div', 'header', 'footer', 'article',    // Block
-            'address', 'section', 'fieldset',
+            'address', 'section', 'fieldset', 'nav',
             'h1', 'h2', 'h3', 'h4', 'h5', 'h6',                         // Headings
             'ul', 'ol', 'li', 'dl', 'dt', 'dd',                         // Lists
             'table', 'th', 'tr', 'td',                                   // Table
