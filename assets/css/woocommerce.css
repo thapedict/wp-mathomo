@@ -1,0 +1,16 @@
+/**
+ * WooCommerce CSS Overrides
+ */
+
+.product mark.count {
+    font-weight: bold;
+    font-size: 92%;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+    .wc-block-grid.has-4-columns .wc-block-grid__product {
+        max-width: 50%;
+        flex-basis: 50%;
+    }
+}
