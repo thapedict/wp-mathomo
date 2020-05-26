@@ -3,8 +3,7 @@
 * @version 1.0.0
 * @author Thapelo Moeti
 */
-.container,
-.container-full {
+.container {
   display: block;
   width: auto;
   min-height: 1px;
@@ -1253,6 +1252,12 @@ a.button {
 *
 *   Those nice to have, but not really necessary classes.
 */
+.hidden {
+  display: none; }
+
+.block {
+  display: block; }
+
 .inline {
   display: inline-block; }
 
@@ -1306,18 +1311,22 @@ a.button {
 
 .success {
   color: #007902;
+  border-color: #007902;
   background-color: #B9FFAD; }
 
 .warning {
   color: #FF3D00;
+  border-color: #FF3D00;
   background-color: #FBCBBB; }
 
 .notice {
   color: #0044D1;
+  border-color: #0044D1;
   background-color: #C1EAFF; }
 
 .error {
   color: #F00;
+  border-color: #F00;
   background-color: #F7D8D8; }
 
 i.fas,
