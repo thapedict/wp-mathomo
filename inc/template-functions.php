@@ -255,7 +255,7 @@ if( ! function_exists( 'mathomo_print_post_meta' ) ):
             /* translators: %s: the category list */
             $posted_in = sprintf( __( 'Posted in %s', 'mathomo' ), get_the_category_list( ', ' ) );
 
-            HTMLER::span_raw_e( $posted_in, array( 'class' => 'post-author' ) );
+            HTMLER::span_raw_e( $posted_in, array( 'class' => 'post-categories' ) );
         print '</div>';
     }
 endif;
