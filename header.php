@@ -26,11 +26,16 @@ do_action('body_header_before');
 
 <header>
     <div class="container">
-        <div class="site-header-wrap ts-sm-2 ts-dl-1-3">
+        <div class="site-header-wrap ts-s-1 ts-ns-1-3 ts-s-align-center">
         <?php
             mathomo_print_site_header();
             
             mathomo_print_header_menu();
+        ?>
+        </div>
+        <div class="mobile-drawer ts-ns-hidden">
+        <?php
+            mathomo_print_mobile_drawer();
         ?>
         </div>
     </div>
