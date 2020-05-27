@@ -284,3 +284,22 @@ if( ! function_exists( 'mathomo_get_theme_copyright' ) ):
         return get_theme_mod( 'copyright_text', $copyright );
     }
 endif;
+
+if( ! function_exists( 'mathomo_print_search_form' ) ):
+    /**
+     * Prints out search form for the mobile-drawer
+     * 
+     * @param bool $for_woocommerce If we should print a product search form.
+     */
+    function mathomo_print_search_form( $for_woocommerce = false ) {
+        echo '<div id="mobile-drawer-search">';
+
+        if( $for_woocommerce && mathomo_is_woocommerce_activated() ) {
+            the_widget( 'WC_Widget_Product_Search' );
+        } else {
+            get_search_form();
+        }
+
+        echo '</div>';
+    }
+endif;
