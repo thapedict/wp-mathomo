@@ -185,6 +185,8 @@ if( ! function_exists( 'mathomo_enqueue_scripts' ) ):
         $CSS = get_template_directory_uri() . "/assets/css/";
         $JS = get_template_directory_uri() . "/assets/js/";
 
+        // Font Awesome
+        wp_enqueue_style( 'fontawesome', $CSS . 'fontawesome-all.min.css', false, '1.0.0' );
         // Grid + Reset, then Basic Styling
         wp_enqueue_style( 'mathomo-grid-basic', $CSS . 'grid-basic.min.css', false, MATHOMO_VERSION );
         // MobileNav
@@ -192,7 +194,7 @@ if( ! function_exists( 'mathomo_enqueue_scripts' ) ):
         // ScrollToTop
         wp_enqueue_style( 'mathomo-scrolltotop', $CSS . 'jquery.scrolltotop.css', false, '1.0.0' );
         // Main Style
-        wp_enqueue_style( 'mathomo-style', get_stylesheet_uri(), array( 'mathomo-grid-basic', 'mathomo-mobilenav', 'mathomo-scrolltotop' ), MATHOMO_VERSION );
+        wp_enqueue_style( 'mathomo-style', get_stylesheet_uri(), array( 'fontawesome', 'mathomo-grid-basic', 'mathomo-mobilenav', 'mathomo-scrolltotop' ), MATHOMO_VERSION );
 
         // MobileNav
         wp_enqueue_script( 'mathomo-mobilenav', $JS . 'jquery.mobilenav.js', array( 'jquery' ), '1.0.0' );
