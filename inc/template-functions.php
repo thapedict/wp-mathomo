@@ -303,3 +303,39 @@ if( ! function_exists( 'mathomo_print_search_form' ) ):
         echo '</div>';
     }
 endif;
+
+if( ! function_exists( 'mathomo_print_mobile_drawer' ) ):
+    /**
+     * Prints out markup for the mobile drawer
+     */
+    function mathomo_print_mobile_drawer() {
+        $buttons = array();
+
+        // mobile menu button
+        $buttons[] = HTMLER::i( '', array(
+            'id' => 'tdt-mobilenav-btn',
+            'class' => 'fas fa-bars',
+            'for' => '#header-menu'
+            ) );
+        
+        // search form button
+        $buttons[] = HTMLER::i( '', array(
+            'id' => 'search-form-btn',
+            'class' => 'fas fa-search'
+        ) );
+
+        // shopping cart button
+        $show_cart = (bool) get_theme_mod( 'show_mini_cart', true );
+        if( mathomo_is_woocommerce_activated() && $show_cart ) {
+            $cart_items = 0;
+            $buttons[] = HTMLER::i_kses( '<b id="items-count">' . $cart_items . '</b>', array(
+                'id' => 'mini-cart-btn',
+                'class' => 'fas fa-shopping-basket'
+            ) );
+        }
+
+        foreach( $buttons as $btn ) {
+            HTMLER::span_raw_e( $btn, array( 'class' => 'align-center' ) );
+        }
+    }
+endif;
