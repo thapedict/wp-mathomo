@@ -347,7 +347,7 @@ if( ! function_exists( 'mathomo_print_mobile_drawer' ) ):
         // shopping cart button
         $show_cart = (bool) get_theme_mod( 'show_mini_cart', true );
         if( mathomo_is_woocommerce_activated() && $show_cart ) {
-            $cart_items = 0;
+            $cart_items = WC()->cart->cart_contents_count;
             $buttons[] = HTMLER::i_kses( '<b id="items-count">' . $cart_items . '</b>', array(
                 'id' => 'mini-cart-btn',
                 'class' => 'fas fa-shopping-basket'
