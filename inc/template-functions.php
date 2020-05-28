@@ -288,13 +288,13 @@ endif;
 if( ! function_exists( 'mathomo_print_search_form' ) ):
     /**
      * Prints out search form for the mobile-drawer
-     * 
-     * @param bool $for_woocommerce If we should print a product search form.
      */
-    function mathomo_print_search_form( $for_woocommerce = false ) {
-        echo '<div class="search-form-wrap">';
+    function mathomo_print_search_form() {
+        echo '<div class="header-search-form-wrap">';
 
-        if( $for_woocommerce && mathomo_is_woocommerce_activated() ) {
+        $mathomo_search_form_for_woocommerce = (bool) get_theme_mod( 'woocommerce_header_search_form', mathomo_is_woocommerce_activated() );
+
+        if( $mathomo_search_form_for_woocommerce && mathomo_is_woocommerce_activated() ) {
             the_widget( 'WC_Widget_Product_Search' );
         } else {
             get_search_form();
@@ -303,6 +303,7 @@ if( ! function_exists( 'mathomo_print_search_form' ) ):
         echo '</div>';
     }
 endif;
+add_action( 'wp_footer', 'mathomo_print_search_form' );
 
 if( ! function_exists( 'mathomo_print_mobile_drawer' ) ):
     /**
