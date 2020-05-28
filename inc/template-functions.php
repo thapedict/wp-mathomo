@@ -305,6 +305,25 @@ if( ! function_exists( 'mathomo_print_search_form' ) ):
 endif;
 add_action( 'wp_footer', 'mathomo_print_search_form' );
 
+if( ! function_exists( 'mathomo_print_mini_cart' ) ):
+    /**
+     * Print's the mini-cart that will be used in the header mobile drawer.
+     */
+    function mathomo_print_mini_cart() {
+        $show_cart = (bool) get_theme_mod( 'show_mini_cart', true );
+        if( ! $show_cart || ! mathomo_is_woocommerce_activated() ) {
+            return;
+        }
+
+        echo '<div class="header-mini-cart-wrap"><span id="close" class="fas fa-times"></span>';
+        
+        the_widget( 'WC_Widget_Cart', 'title=' );
+
+        echo '</div>';
+    }
+endif;
+add_action( 'wp_footer', 'mathomo_print_mini_cart' );
+
 if( ! function_exists( 'mathomo_print_mobile_drawer' ) ):
     /**
      * Prints out markup for the mobile drawer
