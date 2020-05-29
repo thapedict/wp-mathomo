@@ -196,6 +196,11 @@ if( ! function_exists( 'mathomo_enqueue_scripts' ) ):
         // Main Style
         wp_enqueue_style( 'mathomo-style', get_stylesheet_uri(), array( 'fontawesome', 'mathomo-grid-basic', 'mathomo-mobilenav', 'mathomo-scrolltotop' ), MATHOMO_VERSION );
 
+        // Optional WooCommerce
+        if( mathomo_is_woocommerce_activated() ) {
+            wp_enqueue_style( 'mathomo-woocommerce', $CSS . 'woocommerce.css', false, MATHOMO_VERSION );     
+        }
+
         // MobileNav
         wp_enqueue_script( 'mathomo-mobilenav', $JS . 'jquery.mobilenav.js', array( 'jquery' ), '1.0.0' );
         // ScrollToTop
