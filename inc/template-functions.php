@@ -58,8 +58,7 @@ if( ! function_exists( 'mathomo_print_header_menu' ) ):
         );
 
         HTMLER::i_e( '', array(
-                                'id' => 'search-form-btn',
-                                'class' => 'fas fa-search'
+                                'class' => 'search-form-btn fas fa-search'
                             )
                     );
 
@@ -360,8 +359,7 @@ if( ! function_exists( 'mathomo_print_mobile_drawer' ) ):
         
         // search form button
         $buttons[] = HTMLER::i( '', array(
-            'id' => 'search-form-btn',
-            'class' => 'fas fa-search'
+            'class' => 'search-form-btn fas fa-search'
         ) );
 
         // shopping cart button

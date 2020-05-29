@@ -6,7 +6,7 @@ $(document).ready(
         // mobile menu
         $('#tdt-mobilenav-btn').mobilenav({style:'from-left'});
         // search button
-        $('#search-form-btn').on('click', function(e){
+        $('header .search-form-btn').on('click', function(e){
             var btn = $(this),
                 wrapper = $('.header-search-form-wrap');
 
