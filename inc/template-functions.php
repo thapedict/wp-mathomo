@@ -47,6 +47,8 @@ if( ! function_exists( 'mathomo_print_header_menu' ) ):
      * Prints header menu
      */
     function mathomo_print_header_menu() {
+        echo '<div class="header-menu-wrap">';
+
         wp_nav_menu(
             array(
                 'theme_location' => 'header',
@@ -54,6 +56,24 @@ if( ! function_exists( 'mathomo_print_header_menu' ) ):
                 'menu_class' => 'nav-menu'
             )
         );
+
+        HTMLER::i_e( '', array(
+                                'id' => 'search-form-btn',
+                                'class' => 'fas fa-search'
+                            )
+                    );
+
+        if(  mathomo_is_woocommerce_activated() && get_theme_mod( 'show_mini_cart', true ) ) {
+            $cart_items = WC()->cart->cart_contents_count;
+            HTMLER::i_kses_e(
+                '<b class="items-count">' . $cart_items . '</b>',
+                array(
+                        'class' => 'mini-cart-btn fas fa-shopping-basket'
+                    )
+            );
+        }
+
+        echo '</div>';
     }
 endif;
 
