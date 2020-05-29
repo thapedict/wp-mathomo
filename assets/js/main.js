@@ -8,13 +8,19 @@ $(document).ready(
         // search button
         $('header .search-form-btn').on('click', function(e){
             var btn = $(this),
+                _right = 0,
+                _bw = $('body').width(),
                 wrapper = $('.header-search-form-wrap');
 
             if(wrapper.hasClass('shown')) {
                 wrapper.removeClass('shown').hide();
             } else {
+                if(_bw > 500) {
+                    _right = _bw - (btn.offset().left + btn.outerWidth()) + 'px';
+                }
                 wrapper.addClass('shown').show().css({
-                    top: (btn.offset().top + btn.height()) + 'px'
+                    top: (btn.offset().top + btn.height()) + 'px',
+                    right: _right
                 });
             }
         });
