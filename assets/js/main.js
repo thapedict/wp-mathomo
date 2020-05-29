@@ -20,7 +20,7 @@ $(document).ready(
         });
         // mini cart
         var cartWrapper =  $('.header-mini-cart-wrap');
-        $('#mini-cart-btn').on('click', function(e){
+        $('header .mini-cart-btn').on('click', function(e){
             var btn = $(this);
 
             if(cartWrapper.hasClass('shown')) {

@@ -368,9 +368,8 @@ if( ! function_exists( 'mathomo_print_mobile_drawer' ) ):
         $show_cart = (bool) get_theme_mod( 'show_mini_cart', true );
         if( mathomo_is_woocommerce_activated() && $show_cart ) {
             $cart_items = WC()->cart->cart_contents_count;
-            $buttons[] = HTMLER::i_kses( '<b id="items-count">' . $cart_items . '</b>', array(
-                'id' => 'mini-cart-btn',
-                'class' => 'fas fa-shopping-basket'
+            $buttons[] = HTMLER::i_kses( '<b class="items-count">' . $cart_items . '</b>', array(
+                'class' => 'mini-cart-btn fas fa-shopping-basket'
             ) );
         }
 
@@ -387,7 +386,7 @@ if( ! function_exists( 'mathomo_cart_items_count_fragment' ) ):
     function mathomo_cart_items_count_fragment( $fragments ) {
         $items_total = WC()->cart->cart_contents_count;
 
-        $fragments['#mini-cart-btn #items-count'] = '<b id="items-count">' . $items_total . '</b>';
+        $fragments['.mini-cart-btn .items-count'] = '<b class="items-count">' . $items_total . '</b>';
 
         return $fragments;
     }
