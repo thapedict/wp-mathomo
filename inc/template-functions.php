@@ -359,3 +359,17 @@ if( ! function_exists( 'mathomo_print_mobile_drawer' ) ):
         }
     }
 endif;
+
+if( ! function_exists( 'mathomo_cart_items_count_fragment' ) ):
+    /**
+     * Adds the mobile drawer cart items count element fragment to the list
+     */
+    function mathomo_cart_items_count_fragment( $fragments ) {
+        $items_total = WC()->cart->cart_contents_count;
+
+        $fragments['#mini-cart-btn #items-count'] = '<b id="items-count">' . $items_total . '</b>';
+
+        return $fragments;
+    }
+endif;
+add_filter( 'woocommerce_add_to_cart_fragments', 'mathomo_cart_items_count_fragment' );
