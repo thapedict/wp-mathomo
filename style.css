@@ -2,4 +2,561 @@
 Theme Name: Mathomo
 Version: 1.0.0
 Author: Thapelo Moeti
+Tested up to: 5.4.1
+Requires PHP: 5.6
 */
+
+/********************/
+/** Header **/
+/********************/
+body > header {
+    border-bottom: 2px solid #eee;
+}
+
+.site-name {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.site-header {
+    font-size: 85%;
+    padding: 0.5em;
+}
+
+.site-name a {
+    text-decoration: none;
+}
+
+header .header-menu-wrap {
+    text-align: right;
+}
+
+.header-menu-wrap > i {
+    font-size: 1.25em;
+    padding: 0 0.3em;
+}
+
+.header-menu-wrap > div {
+    display: inline-block;
+}
+
+#header-menu {
+    text-align: right;
+}
+
+#header-menu .current_page_item {
+    border-bottom: 3px solid;
+}
+
+/********************/
+/** Body **/
+/********************/
+.page-title,
+body.archive .archive-description,
+article.no-results,
+article.post-password-required .post-content,
+article:not(.post-excerpt) .post-meta {
+    text-align: center;
+}
+
+.container > article > *:not(.page-title) {
+    margin-bottom: 2em;
+}
+
+.page-title {
+    font-size: 3em;
+    font-weight: bold;
+    padding: 1.5em 0;
+    margin: 0;
+}
+
+body.archive .archive-description {
+    margin-bottom: 2em;
+}
+
+article.no-results .post-content {
+    font-size: 125%;
+    font-weight: bold;
+}
+
+article.no-results .search-form {
+    margin-top: 3em;
+}
+
+article.no-results .search-field {
+    width: 50%;
+    padding: 0.5em;
+}
+
+article.no-results .search-submit {
+    margin-top: 1em;
+    padding: 0.5em 1.5em;
+}
+
+article.no-results label:after {
+    display: table;
+    content: "";
+    width: 100%;
+}
+
+article:not(.post-excerpt) > * {
+    width: 100%;
+}
+
+article.post-excerpt:after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+article:not(.post-excerpt) .post-thumbnail img {
+    width: 100%;
+}
+
+.post-content > .alignfull {
+    width: calc(100% + 32px);
+    margin-left: -16px;
+}
+
+article.post-excerpt .post-title {
+    font-size: 2em;
+    margin: 0 0 0.6em;
+    line-height: 1;
+}
+
+.post-meta > span:not(.post-author):before {
+  content: " \2022 ";
+  padding: 0 0.5em;
+}
+
+article.post-excerpt .post-excerpt {
+    margin-top: 0.5em;
+}
+
+.container > .main-loop {
+    margin-bottom: 2em;
+}
+
+.main-loop > article {
+    margin-bottom: 2em;
+}
+
+article a.post-edit-link {
+    font-weight: bold;
+    font-size: 95%;
+}
+
+article .post-tags .label {
+    font-weight: bold;
+    padding-right: 1em;
+}
+
+nav.posts-navigation,
+nav.post-navigation {
+    padding-top: 2em;
+}
+
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+    display: flex;
+}
+
+.posts-navigation .nav-links div,
+.post-navigation .nav-links div {
+    flex: 1;
+}
+
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+    text-align: right;
+}
+
+/********************/
+/** Post Content **/
+/********************/
+.alignleft {
+    float: left;
+    margin: 0 1em 1em 0;
+}
+
+.alignright {
+    float: right;
+    margin: 0 0 1em 1em;
+}
+
+.aligncenter {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article.sticky {
+    border-left: 5px solid #ccc;
+}
+
+article.post-password-required .post-password-form {
+    max-width: 500px;
+    font-size: 1.1em;
+    display: inline-block;
+}
+
+article.post-password-required .post-password-form input {
+    margin-top: 0.5em;
+}
+
+.wp-caption.alignnone,
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.aligncenter {
+    max-width: 100% !important;
+}
+
+figure figcaption {
+    margin: 0 0 1em;
+    font-style: italic;
+    font-size: 95%;
+    padding: 0.5em;
+}
+
+.blocks-gallery-item figcaption {
+    margin-bottom: 0;
+}
+
+/********************/
+/** Blocks **/
+/********************/
+.wp-block-cover .wp-block-cover__inner-container h1,
+.wp-block-cover .wp-block-cover__inner-container h2,
+.wp-block-cover .wp-block-cover__inner-container h3,
+.wp-block-cover .wp-block-cover__inner-container h4,
+.wp-block-cover .wp-block-cover__inner-container h5,
+.wp-block-cover .wp-block-cover__inner-container h6 {
+    color: #000000;
+}
+
+.wp-block-button__link {
+    border-radius: 0;
+}
+
+.wp-block-button__link.is-styled-rounded {
+    border-radius: 28px;
+}
+
+.wp-block-image.alignfull {
+    max-width: none;
+}
+
+.wp-block-image figcaption {
+    margin-top: 0;
+}
+
+.wp-block-quote,
+.wp-block-quote.has-text-align-right {
+    margin: 1em 1em 1em 0;
+    padding: 1em;
+    border-width: 5px;
+}
+
+.wp-block-pullquote {
+    border-width: 4px 0;
+    border-style: solid;
+    margin: 2em 1em;
+    padding: 2.5em 0;
+}
+
+.wp-block-pullquote blockquote {
+    background-color: transparent;
+    border: none;
+    margin: auto;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.wp-block-pullquote blockquote,
+.wp-block-pullquote.is-style-solid-color blockquote {
+    max-width: 100%;
+}
+
+.wp-block-pullquote p,
+.wp-block-pullquote.is-style-solid-color blockquote p {
+    font-size: 1.3em;
+    padding: 0;
+}
+
+.wp-block-pullquote.is-style-with-quotes {
+    border-width: 0;
+}
+
+.wp-block-pullquote.is-style-with-quotes p:before,
+.wp-block-pullquote.is-style-with-quotes p:after {
+    font-size: 3em;
+}
+
+.wp-block-pullquote.is-style-with-quotes p:before {
+    content: '"';
+    float: left;
+    margin-top:  -0.6em;
+}
+
+.wp-block-pullquote.is-style-with-quotes p:after {
+    content: '"';
+    float: right;
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+    margin: 1em 1em 1em 0;
+    padding: 1em;
+}
+
+/********************/
+/** Comments **/
+/********************/
+.bypostauthor {
+    background-color: #ccc;
+}
+
+.post-comments {
+    border-top: 2px dotted;
+    padding-top: 1em;
+}
+
+.post-comments > h4 {
+    padding: 2em 0;
+}
+
+.older-comments > .pingback,
+.older-comments > .trackback {
+    border: 1px solid #ddd;
+    border-width: 1px 5px;
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    font-size: 0.9em;
+}
+
+.older-comments .comment {
+    border-bottom: 1px dotted #ccc;
+    padding-top: 1em;
+}
+
+.older-comments .comment > .comment {
+    border-left: 1px dotted #ccc;
+}
+
+.older-comments .comment > .comment:last-child {
+    margin-left: 0.3em;
+    padding-left: 0.5em;
+    border-bottom: none;
+}
+
+.older-comments .comment-reply-link {
+    font-size: 95%;
+    font-weight: bold;
+}
+
+#respond.comment-respond {
+    max-width: 40em;
+    padding-top: 2em;
+}
+
+#commentform .required {
+    font-weight: bold;
+    color: red;
+}
+
+/********************/
+/** Footer **/
+/********************/
+body > footer {
+    color: #fff;
+    background-color: #101010;
+}
+
+.widget-title {
+    border-bottom: 1px solid;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+section#footer-strip {
+    background-color: #060606;
+    font-size: 90%;
+    padding: 2em 0;
+}
+
+footer .copyright-notice {
+    padding: 1em;
+}
+
+footer .copyright-notice:after {
+    content: '\2022';
+    padding-left: 1em;
+}
+
+/********************/
+/** Floating Widgets **/
+/********************/
+.header-search-form-wrap {
+    display: none;
+    position: absolute;
+    top: 100%;
+    z-index: 9999;
+    padding: 1em;
+    background-color: #fff;
+    width: 300px;
+}
+
+.header-search-form-wrap form {
+    position: relative;
+}
+
+.header-search-form-wrap form [type=submit] {
+    position: absolute;
+    right: 0;
+    top: 1px;
+}
+
+.header-search-form-wrap form [type=search] {
+    padding: .5em .8em;
+}
+
+/********************/
+/** Media Queries **/
+/********************/
+@media screen and (min-width: 768px) {
+    /********************/
+    /** Full Width **/
+    /********************/
+    body:not(.with-sidebar) #main .container {
+        padding: 0; /*reset grid-basic */
+    }
+
+    /* Stop content from touching parent sides */
+    body:not(.with-sidebar) .container > .main-loop,
+    footer .container > * {
+        width: 100%;
+    }
+
+    /* make parent flex so we can position kids center */
+    body.archive:not(.with-sidebar) #main > .container,
+    body.blog:not(.with-sidebar) #main > .container,
+    body.search:not(.with-sidebar) #main > .container,
+    body:not(.with-sidebar) .container > article,
+    footer .container {
+        display: flex;
+        flex-flow: column wrap;
+        padding: 0 calc((2/12) * 100%);
+    }
+
+    /* Full width but push content in */
+    body:not(.with-sidebar) .pushin-full-width {
+        display: flex;
+        width: calc(100% / (8/12));
+        padding: 1em calc((100%/8) * 2);
+        margin-left: calc((100%/8) * -2);
+    }
+
+    /* Stretch out child to be as big as parent */
+    body:not(.with-sidebar) .post-content > .alignfull {
+        width: calc(100% / (8/12));
+        margin-left: calc((100%/8) * -2);
+    }
+
+    article.post-excerpt .post-thumbnail {
+        float: left;
+        margin: 0 0.5em 0 0;
+    }
+    
+    article.post-excerpt > *:not(.post-thumbnail) {
+        margin-left: 162px;
+    }
+
+    .older-comments .comment > .comment {
+        margin-left: 1.5em;
+        padding-left: 1em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header .site-header {
+        margin-top: 2em;
+    }
+
+    .header-menu-wrap {
+        display: none;
+    }
+
+    header .mobile-drawer {
+        display: flex;
+        padding: 2em 1em;
+        position: relative;
+    }
+    
+    header .mobile-drawer > span {
+        font-size: 2em;
+        flex-grow: 1;
+    }
+    
+    .header-search-form-wrap {
+        width: 100%;
+    }
+
+    .post-excerpt .post-thumbnail {
+        margin-bottom: 0.8em;
+    }
+    
+    article .post-meta > * {
+        display: block;
+        font-size: 95%;
+    }
+    
+    article .post-meta > *:before {
+        display: block;
+        line-height: 0.9;
+    }
+    
+    article.hentry {
+        text-align: center;
+    }
+
+    article.sticky {
+        border: 1px solid #ccc;
+        border-width: 0 1px;
+        padding: 0 0.5em;
+    }
+
+    body:not(.home) .post-content {
+        margin-top: 1em;
+        text-align: left;
+    }
+
+    .posts-navigation .nav-links,
+    .post-navigation .nav-links {
+        flex-direction: column;
+    }
+    
+    .posts-navigation .nav-links div,
+    .post-navigation .nav-links div {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 0.5em;
+    }
+
+    .footer-cols {
+        padding-top: 2em;
+    }
+
+    footer .theme-credits-wrap > *,
+    footer .copyright-notice:after {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .footer-cols > div {
+        padding-left: 0;
+        padding-top: 2em;
+    }
+}
