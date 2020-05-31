@@ -287,7 +287,7 @@ if( ! function_exists( 'mathomo_get_theme_credits' ) ):
      */
     function mathomo_get_theme_credits() {
         /* translators: %s: link to theme designer */
-        return sprintf( __( 'Designed By %s', 'mathomo' ), '<a href="https://thapedict.co.za/">Thapedict</a>' );
+        return sprintf( __( 'Theme By %s', 'mathomo' ), '<a href="https://thapedict.co.za/">Thapedict</a>' );
     }
 endif;
 
