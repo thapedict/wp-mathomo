@@ -334,6 +334,12 @@ if( ! function_exists( 'mathomo_print_mini_cart' ) ):
             return;
         }
 
+        // This check is also done by the widget itself.
+        // So let's not proceed if we aren't going to get a widget
+        if( apply_filters( 'woocommerce_widget_cart_is_hidden', is_cart() || is_checkout() ) ) {
+            return;
+        }
+
         echo '<div class="header-mini-cart-wrap"><span id="close" class="fas fa-times"></span>';
         
         the_widget( 'WC_Widget_Cart', 'title=' );
