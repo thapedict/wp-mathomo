@@ -2,10 +2,136 @@
  * WooCommerce CSS Overrides
  */
 
+/* Overrides */
 .product mark.count {
     font-weight: bold;
     font-size: 92%;
     background-color: transparent;
+}
+
+/* Custom Markup */
+.header-mini-cart-wrap {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 9999;
+    height: 100%;
+    width: 90%;
+    max-width: 300px;
+    padding: 4em 1em 1em;
+    background-color: #fff;
+}
+
+.header-mini-cart-wrap.not-shown {
+    right: -100%;
+    animation: slideout-from-right 1s linear;
+}
+
+.header-mini-cart-wrap.shown {
+    right: 0;
+    animation: slidein-from-right 1s linear;
+}
+
+@keyframes slidein-from-right {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 0;
+    }
+}
+
+@keyframes slideout-from-right {
+    from {
+        right: 0;
+    }
+    to {
+        right: -100%;
+    }
+}
+
+.header-mini-cart-wrap .woocommerce-mini-cart__empty-message {
+    font-size: 1.3em;
+    padding-top: 3em;
+}
+
+.header-mini-cart-wrap .woocommerce-mini-cart__empty-message {
+    font-size: 1.1em;
+    padding: 4em 1em;
+    text-align: center;
+}
+
+.header-mini-cart-wrap .widget_shopping_cart_content {
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+}
+
+.header-mini-cart-wrap > #close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.mini-cart-btn {
+    position: relative;
+    max-width: 1em;
+}
+
+.mini-cart-btn .items-count {
+    position: absolute;
+    top: -0.4em;
+    font-size: 70%;
+    background-color: #FFF;
+    padding: 0.1em;
+    right: -1em;
+    border: 1px solid #ccc;
+}
+
+.mobile-drawer .mini-cart-btn .items-count {
+    right: -0.5em;
+}
+
+.woocommerce span.onsale {
+    border-radius: 0;
+    padding: 1em 1.5em;
+    line-height: 1;
+    min-height: auto;
+}
+
+.woocommerce ul.products li.product .price del {
+    color: #f00;
+}
+
+.entry-summary .price del {
+    color: #fd7979;
+    font-size: 90%;
+}
+
+.entry-summary .product_meta > span {
+    margin-top: 0.5em;
+    display: block;
+}
+
+.woocommerce table.shop_attributes td p {
+    padding: 8px 10px;
+}
+
+section.related.products > h2 {
+    margin-top: 2em;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+    border-radius: 0;
+    color: #fff;
+    background-color: #4c4c4c;
+    padding: .5em .8em;
 }
 
 @media screen and (max-width: 768px) {
@@ -13,4 +139,6 @@
         max-width: 50%;
         flex-basis: 50%;
     }
+
+
 }
