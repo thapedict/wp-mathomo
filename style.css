@@ -54,6 +54,10 @@ header .header-menu-wrap {
     border-bottom: 3px solid;
 }
 
+.mobilenav-full-menu .drop-menu-icon {
+    margin-top: 0.1em;
+}
+
 /********************/
 /** Body **/
 /********************/
