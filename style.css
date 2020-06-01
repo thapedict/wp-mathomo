@@ -28,6 +28,11 @@ body > header {
     text-decoration: none;
 }
 
+header .custom-logo {
+    max-height: 65px;
+    width: auto;
+}
+
 header .header-menu-wrap {
     text-align: right;
 }
