@@ -248,6 +248,33 @@ function mathomo_before_header() {
 }
 add_action('body_header_before', 'mathomo_before_header');
 
+/**
+ * Returns the default color.
+ * 
+ * @param string $name The setting name of the color.
+ * 
+ * @return string A hex color string if found, or empty string if none found.
+ */
+function mathomo_get_default_color( $name ) {
+    $default_colors = array(
+        'header_textcolor' => '#000000',
+        'header_backcolor' => '#FFFFFF',
+        'pagetitle_textcolor' => '#FFFFFF',
+        'headings_textcolor' => '#FFFFFF',
+        'content_backcolor' => '#000000',
+        'footerwidget_textcolor' => '#FFFFFF',
+        'footerwidget_backcolor' => '#101010',
+        'footerstrip_textcolor' => '#FFFFFF',
+        'footerstrip_backcolor' => '#000000'
+    );
+
+    if( isset( $default_colors[ $name ] ) ) {
+        return $default_colors[ $name ];
+    } else {
+        return '';
+    }
+}
+
 
 // Load template helper functions
 require_once get_template_directory() . '/inc/class-htmler.php';
