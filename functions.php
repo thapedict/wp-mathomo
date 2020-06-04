@@ -280,3 +280,5 @@ function mathomo_get_default_color( $name ) {
 require_once get_template_directory() . '/inc/class-htmler.php';
 require_once get_template_directory() . '/inc/template-functions.php';
 
+// Load customizer settings
+require_once get_template_directory() . '/inc/customize.php';
