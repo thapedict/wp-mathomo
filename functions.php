@@ -251,13 +251,15 @@ add_action('body_header_before', 'mathomo_before_header');
 /**
  * Returns the default color.
  * 
+ * @TODO Find out why header_textcolor is returning "Invalid value".
+ * 
  * @param string $name The setting name of the color.
  * 
  * @return string A hex color string if found, or empty string if none found.
  */
 function mathomo_get_default_color( $name ) {
     $default_colors = array(
-        'header_textcolor' => '#000000',
+        'header_text_color' => '#000000',
         'header_backcolor' => '#FFFFFF',
         'pagetitle_textcolor' => '#FFFFFF',
         'headings_textcolor' => '#FFFFFF',
