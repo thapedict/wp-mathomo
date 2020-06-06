@@ -23,3 +23,11 @@ function mathomo_update_customize_defaults( $customize ) {
     $customize->remove_section( 'colors' );
 }
 add_action( 'customize_register', 'mathomo_update_customize_defaults' );
+
+/**
+ * Load the customizer JS file.
+ */
+function mathomo_load_customizer_js() {    
+    wp_enqueue_script( 'tdt-one-customizer', mathomo_get_uri( '/js/customizer.js' ), array( 'jquery', 'customize-preview' ), MATHOMO_VERSION, true);
+}
+add_action( 'customize_preview_init', 'mathomo_load_customizer_js' );
