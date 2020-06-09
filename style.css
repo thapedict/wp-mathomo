@@ -22,6 +22,7 @@ body > header {
 .site-header {
     font-size: 85%;
     padding: 0.5em;
+    align-self: center;
 }
 
 .site-name a {
@@ -34,16 +35,17 @@ header .custom-logo {
 }
 
 header .header-menu-wrap {
-    text-align: right;
+    display: flex;
 }
 
 .header-menu-wrap > i {
+    align-self: center;
     font-size: 1.25em;
     padding: 0 0.3em;
 }
 
 .header-menu-wrap > div {
-    display: inline-block;
+    flex-grow: 1;
 }
 
 #header-menu {
@@ -492,7 +494,7 @@ footer .copyright-notice:after {
         margin-top: 2em;
     }
 
-    .header-menu-wrap {
+    header .header-menu-wrap {
         display: none;
     }
 
