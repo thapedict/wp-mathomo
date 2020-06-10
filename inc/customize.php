@@ -128,3 +128,14 @@ function mathomo_add_theme_colors_settings( $customize ) {
     );
 }
 add_action( 'customize_register', 'mathomo_add_theme_colors_settings' );
+
+/**
+ * Gets a user set color.
+ * 
+ * @param string $name The name of color.
+ * 
+ * @return string The hex user set color
+ */
+function mathomo_get_userset_color( $name ) {
+    return sanitize_hex_color( get_theme_mod( $name, mathomo_get_default_color( $name ) ) );
+}
