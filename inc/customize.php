@@ -170,3 +170,11 @@ function mathomo_get_final_customize_css() {
 
     return $color_styling;
 }
+
+/**
+ * Add customize set styles to the enqueue stack.
+ */
+function mathomo_enqueue_customize_css() {
+    wp_add_inline_style( 'mathomo-style', mathomo_get_final_customize_css() );
+}
+add_action( 'wp_enqueue_scripts', 'mathomo_enqueue_customize_css' );
