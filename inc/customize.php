@@ -139,3 +139,34 @@ add_action( 'customize_register', 'mathomo_add_theme_colors_settings' );
 function mathomo_get_userset_color( $name ) {
     return sanitize_hex_color( get_theme_mod( $name, mathomo_get_default_color( $name ) ) );
 }
+
+/**
+ * For HTML output - Get final CSS (for colors) string.
+ * 
+ * @return string The css string ready for output.
+ */
+function mathomo_get_final_customize_css() {
+    $color_styling = '';
+
+    // Header colors
+    $color_styling .= sprintf( '
+                        body > header {
+                            color: %1$s;
+                            background-color: %2$s;
+                        }',
+                        mathomo_get_userset_color( 'header_text_color' ),
+                        mathomo_get_userset_color( 'header_backcolor' )
+                    );
+
+    // Footer colors
+    $color_styling .= sprintf( '
+                        body > footer {
+                            color: %1$s;
+                            background-color: %2$s;
+                        }',
+                        mathomo_get_userset_color( 'footerwidget_textcolor' ),
+                        mathomo_get_userset_color( 'footerwidget_backcolor' )
+                    );
+
+    return $color_styling;
+}
