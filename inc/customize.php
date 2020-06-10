@@ -31,3 +31,20 @@ function mathomo_load_customizer_js() {
     wp_enqueue_script( 'tdt-one-customizer', mathomo_get_uri( '/js/customizer.js' ), array( 'jquery', 'customize-preview' ), MATHOMO_VERSION, true);
 }
 add_action( 'customize_preview_init', 'mathomo_load_customizer_js' );
+
+/**
+ * Gets the defualt color settings.
+ * 
+ * @param string $id The settings ID.
+ * 
+ * @return array The default settings.
+ */
+function mathomo_get_color_settings( $id ) {
+    $settings = array(
+        'default' => mathomo_get_default_color( $id ),
+        'sanitize_callback' => 'sanitize_hex_color',
+        'sanitize_js_callback' => 'maybe_hash_hex_color'
+    );
+
+    return apply_filters( __FUNCTION__, $id, $settings );
+}
