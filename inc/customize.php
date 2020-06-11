@@ -178,3 +178,39 @@ function mathomo_enqueue_customize_css() {
     wp_add_inline_style( 'mathomo-style', mathomo_get_final_customize_css() );
 }
 add_action( 'wp_enqueue_scripts', 'mathomo_enqueue_customize_css' );
+
+/**
+ * Add header mini cart setting.
+ * 
+ * @param WP_Customize_Manager $customize The WP_Customize_Manager.
+ */
+function mathomo_add_woocommerce_settings( $customize ) {
+    if( ! mathomo_is_woocommerce_activated() ) {
+        return;
+    }
+
+    $customize->add_section(
+        'theme_woocommerce',
+        array(
+            'title' => __( 'Header Cart', 'mathomo' ),
+            'panel' => 'woocommerce'
+        )
+    );
+
+    $customize->add_setting(
+        'show_mini_cart',
+        array(
+            'default' => true
+        )
+    );
+    $customize->add_control(
+        'show_mini_cart',
+        array(
+            'label' => __( 'Show Cart In Header', 'mathomo' ),
+            'type' => 'checkbox',
+            'settings' => 'show_mini_cart',
+            'section' => 'theme_woocommerce'
+        )
+    );
+}
+add_action( 'customize_register', 'mathomo_add_woocommerce_settings' );
