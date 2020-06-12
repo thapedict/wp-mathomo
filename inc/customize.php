@@ -28,7 +28,7 @@ add_action( 'customize_register', 'mathomo_update_customize_defaults' );
  * Load the customizer JS file.
  */
 function mathomo_load_customizer_js() {    
-    wp_enqueue_script( 'tdt-one-customizer', mathomo_get_uri( '/js/customizer.js' ), array( 'jquery', 'customize-preview' ), MATHOMO_VERSION, true);
+    wp_enqueue_script( 'tdt-one-customizer', mathomo_get_uri( '/assets/js/customizer.js' ), array( 'jquery', 'customize-preview' ), MATHOMO_VERSION, true);
 }
 add_action( 'customize_preview_init', 'mathomo_load_customizer_js' );
 
