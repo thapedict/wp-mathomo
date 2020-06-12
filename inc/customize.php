@@ -232,7 +232,9 @@ function mathomo_add_theme_credits_settings( $customize ) {
     $customize->add_setting(
         'copyright_text',
         array(
-            'default' => mathomo_get_theme_copyright()
+            'default' => mathomo_get_theme_copyright(),
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'postMessage'
         )
     );
     $customize->add_control(
