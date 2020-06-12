@@ -83,8 +83,8 @@ if( ! function_exists( 'mathomo_print_posts_navigation' ) ):
     function mathomo_print_posts_navigation() {
         the_posts_navigation(
             array( 
-                    'prev_text' => __('&larr; Previous Posts', 'tdt-one'),
-                    'next_text' => __('Next Posts &rarr;', 'tdt-one')
+                    'prev_text' => __('&larr; Previous Posts', 'mathomo'),
+                    'next_text' => __('Next Posts &rarr;', 'mathomo')
             )
         );
     }
@@ -182,7 +182,7 @@ if( ! function_exists( 'mathomo_get_read_more_text' ) ):
         return sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', '_s' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'mathomo' ),
 				array(
 					'span' => array(
 						'class' => array(),

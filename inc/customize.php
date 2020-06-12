@@ -28,7 +28,7 @@ add_action( 'customize_register', 'mathomo_update_customize_defaults' );
  * Load the customizer JS file.
  */
 function mathomo_load_customizer_js() {    
-    wp_enqueue_script( 'tdt-one-customizer', mathomo_get_uri( '/assets/js/customizer.js' ), array( 'jquery', 'customize-preview' ), MATHOMO_VERSION, true);
+    wp_enqueue_script( 'mathomo-customizer', mathomo_get_uri( '/assets/js/customizer.js' ), array( 'jquery', 'customize-preview' ), MATHOMO_VERSION, true);
 }
 add_action( 'customize_preview_init', 'mathomo_load_customizer_js' );
 
@@ -58,7 +58,7 @@ function mathomo_get_color_settings( $id ) {
  */
 function mathomo_add_theme_colors_settings( $customize ) {
     $customize->add_panel( 'colors_panel', array(
-        'title' => __( 'Colors' ),
+        'title' => __( 'Colors', 'mathomo' ),
         'priority' => 10
     ) );
 
