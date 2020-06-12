@@ -214,3 +214,35 @@ function mathomo_add_woocommerce_settings( $customize ) {
     );
 }
 add_action( 'customize_register', 'mathomo_add_woocommerce_settings' );
+
+/**
+ * Add theme credits setting.
+ * 
+ * @param WP_Customize_Manager $customize The WP_Customize_Manager.
+ */
+function mathomo_add_theme_credits_settings( $customize ) {
+    $customize->add_section(
+        'theme_credits',
+        array(
+            'title' => __( 'Theme Credits', 'mathomo' ),
+            'priority' => 140
+        )
+    );
+
+    $customize->add_setting(
+        'copyright_text',
+        array(
+            'default' => mathomo_get_theme_copyright()
+        )
+    );
+    $customize->add_control(
+        'copyright_text',
+        array(
+            'label' => __( 'Copyright Text', 'mathomo' ),
+            'section' => 'theme_credits',
+            'settings' => 'copyright_text',
+            'type' => 'textarea'
+        )
+    );
+}
+add_action( 'customize_register', 'mathomo_add_theme_credits_settings' );
