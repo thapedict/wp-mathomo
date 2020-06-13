@@ -139,6 +139,16 @@ section.related.products > h2 {
         max-width: 50%;
         flex-basis: 50%;
     }
+}
 
-
+@media screen and (min-width: 768px) {
+    .woocommerce-account .post-content > .woocommerce {
+        display: flex;
+        flex-flow: wrap column;
+        align-items: center;
+    }
+    
+    .woocommerce-account .post-content .woocommerce-form-login {
+        width: 30em;
+    }
 }
