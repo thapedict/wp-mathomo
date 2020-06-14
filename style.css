@@ -235,7 +235,8 @@ article.post-password-required .post-password-form input {
     max-width: 100% !important;
 }
 
-figure figcaption {
+figure figcaption,
+.wp-caption-text.gallery-caption {
     margin: 0 0 1em;
     font-style: italic;
     font-size: 95%;
