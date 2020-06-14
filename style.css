@@ -571,6 +571,10 @@ footer .copyright-notice:after {
         width: 100%;
     }
 
+    .page-title {
+        padding: 1em 0 0.8em;
+    }
+
     .post-excerpt .post-thumbnail {
         margin-bottom: 0.8em;
     }
