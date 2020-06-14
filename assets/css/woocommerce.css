@@ -134,6 +134,12 @@ section.related.products > h2 {
     padding: .5em .8em;
 }
 
+.woocommerce-account .post-content > .woocommerce {
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+}
+
 @media screen and (max-width: 768px) {
     .wc-block-grid.has-4-columns .wc-block-grid__product {
         max-width: 50%;
@@ -142,12 +148,6 @@ section.related.products > h2 {
 }
 
 @media screen and (min-width: 768px) {
-    .woocommerce-account .post-content > .woocommerce {
-        display: flex;
-        flex-flow: wrap column;
-        align-items: center;
-    }
-    
     .woocommerce-account .post-content .woocommerce-form-login {
         width: 30em;
     }
