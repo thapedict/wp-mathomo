@@ -306,6 +306,7 @@ class HTMLER {
 
         if( isset( $attr[ 'src' ] ) ) {
             $src = sprintf( ' src="%s"', esc_url( $attr[ 'src' ] ) );
+            unset( $attr[ 'src' ] );
         }
 
         $attr = $src . static::attr( $attr );
