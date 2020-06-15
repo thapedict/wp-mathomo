@@ -60,8 +60,10 @@ header .header-menu-wrap {
     flex-grow: 1;
 }
 
-#header-menu {
-    text-align: right;
+header #header-menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
 }
 
 #header-menu .current_page_item {
