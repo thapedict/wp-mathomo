@@ -31,13 +31,27 @@ $(document).ready(
 
             if(cartWrapper.hasClass('shown')) {
                 cartWrapper.addClass('not-shown').removeClass('shown');
+                mainBodyLightbox.hide();
             } else {
                 cartWrapper.addClass('shown').removeClass('not-shown');
+                mainBodyLightbox.show();
             }
         });
         cartWrapper.children('#close').on('click', function(e){
             cartWrapper.addClass('not-shown').removeClass('shown');
+            mainBodyLightbox.hide();
         });
+
+        function add_main_body_lightbox(){
+            if($('.main-body-lightbox').length){
+                return;
+            }
+
+            $('body').append('<div class="main-body-lightbox"></div>');
+        }
+
+        add_main_body_lightbox();
+        var mainBodyLightbox = $('.main-body-lightbox');
     }
 );
 })(jQuery);
