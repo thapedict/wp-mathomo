@@ -107,6 +107,12 @@
     font-size: 90%;
 }
 
+.single_variation .price .amount {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    display: inline-block;
+}
+
 .entry-summary .product_meta > span {
     margin-top: 0.5em;
     display: block;
