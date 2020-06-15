@@ -12,7 +12,9 @@
 
         the_title( '<h1 class="page-title">', '</h1>' );
 
-        mathomo_print_post_meta();
+        if( 'post' === get_post_type() ) {
+            mathomo_print_post_meta();
+        }
 
         if( has_post_thumbnail() && ! post_password_required() ) {
             print '<div class="post-thumbnail">';
