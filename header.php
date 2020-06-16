@@ -22,7 +22,7 @@ do_action('body_header_before');
 
 ?>
 
-<a class="skip-link screen-reader-text" href="#main-content"><?php esc_html_e( 'Skip to content', 'mathomo' ); ?></a>
+<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'mathomo' ); ?></a>
 
 <header>
     <div class="container">
