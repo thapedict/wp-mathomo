@@ -396,3 +396,35 @@ if( ! function_exists( 'mathomo_cart_items_count_fragment' ) ):
     }
 endif;
 add_filter( 'woocommerce_add_to_cart_fragments', 'mathomo_cart_items_count_fragment' );
+
+if( ! function_exists( 'mathomo_print_gallery_thumbs' ) ):
+    /**
+     * Prints post gallery thumbnails (for post excerpts)
+     */
+    function mathomo_print_gallery_thumbs() {
+        $galleries = get_post_galleries( 0, false );
+
+        $no_of_thumbs = 3;
+
+        $flattened = array_shift( $galleries );
+        $flattened = $flattened[ 'src' ];
+
+        // if we don't have all required thumbs, try and get them from other galleries
+        if( $no_of_thumbs > count( $flattened ) ) {
+            foreach( $galleries as $k => $g ) {
+                $flattened = array_merge( $flattened, $galleries[ $k ][ 'src' ] );
+            }
+        }
+
+        $flattened = array_slice( $flattened, 0, $no_of_thumbs );
+
+        $wrap_class = 'gallery-thumb-wrap cols-' . $no_of_thumbs;
+
+        // print them
+        echo '<div class="' . $wrap_class .'">';
+        foreach( $flattened as $img ) {
+            HTMLER::img_e( array('class' => 'gallery-thumb', 'src' => $img, 'alt' => 'gallery image thumbnail' ) );
+        }
+        echo '</div>';
+    }
+endif;
