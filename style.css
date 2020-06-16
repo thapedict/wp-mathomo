@@ -559,44 +559,6 @@ footer .copyright-notice:after {
 /** Media Queries **/
 /********************/
 @media screen and (min-width: 768px) {
-    /********************/
-    /** Full Width **/
-    /********************/
-    body:not(.with-sidebar) #main .container {
-        padding: 0; /*reset grid-basic */
-    }
-
-    /* Stop content from touching parent sides */
-    body:not(.with-sidebar) .container > .main-loop,
-    footer .container > * {
-        width: 100%;
-    }
-
-    /* make parent flex so we can position kids center */
-    body.archive:not(.with-sidebar) #main > .container,
-    body.blog:not(.with-sidebar) #main > .container,
-    body.search:not(.with-sidebar) #main > .container,
-    body:not(.with-sidebar) .container > article,
-    footer .container {
-        display: flex;
-        flex-flow: column wrap;
-        padding: 0 calc((2/12) * 100%);
-    }
-
-    /* Full width but push content in */
-    body:not(.with-sidebar) .pushin-full-width {
-        display: flex;
-        width: calc(100% / (8/12));
-        padding: 1em calc((100%/8) * 2);
-        margin-left: calc((100%/8) * -2);
-    }
-
-    /* Stretch out child to be as big as parent */
-    body:not(.with-sidebar) .post-content > .alignfull {
-        width: calc(100% / (8/12));
-        margin-left: calc((100%/8) * -2);
-    }
-
     article.post-excerpt .post-thumbnail {
         float: left;
         margin: 0 0.5em 0 0;
@@ -642,6 +604,10 @@ footer .copyright-notice:after {
 
     .post-excerpt .post-thumbnail {
         margin-bottom: 0.8em;
+    }
+    
+    .post-excerpt.format-gallery .gallery-thumb-wrap {
+        justify-content: center;
     }
     
     article .post-meta > * {
@@ -704,6 +670,44 @@ footer .copyright-notice:after {
 }
 
 @media screen and (min-width: 960px) {
+    /********************/
+    /** Full Width **/
+    /********************/
+    body:not(.with-sidebar) #main .container {
+        padding: 0; /*reset grid-basic */
+    }
+
+    /* Stop content from touching parent sides */
+    body:not(.with-sidebar) .container > .main-loop,
+    footer .container > * {
+        width: 100%;
+    }
+
+    /* make parent flex so we can position kids center */
+    body.archive:not(.with-sidebar) #main > .container,
+    body.blog:not(.with-sidebar) #main > .container,
+    body.search:not(.with-sidebar) #main > .container,
+    body:not(.with-sidebar) .container > article,
+    footer .container {
+        display: flex;
+        flex-flow: column wrap;
+        padding: 0 calc((2/12) * 100%);
+    }
+
+    /* Full width but push content in */
+    body:not(.with-sidebar) .pushin-full-width {
+        display: flex;
+        width: calc(100% / (8/12));
+        padding: 1em calc((100%/8) * 2);
+        margin-left: calc((100%/8) * -2);
+    }
+
+    /* Stretch out child to be as big as parent */
+    body:not(.with-sidebar) .post-content > .alignfull {
+        width: calc(100% / (8/12));
+        margin-left: calc((100%/8) * -2);
+    }
+
     .footer-cols > div {
         padding-left: 0;
         padding-top: 2em;
