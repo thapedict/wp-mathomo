@@ -299,6 +299,19 @@ figure figcaption,
     margin-bottom: 0;
 }
 
+.post-excerpt.format-gallery .post-read-more-link {
+    margin-top: 1em;
+}
+
+.post-excerpt.format-gallery .gallery-thumb-wrap {
+    display: flex;
+}
+
+.post-excerpt.format-gallery .cols-3 .gallery-thumb {
+    width: 33%;
+    max-width: 150px;
+}
+
 div[class*="galleryid-"] {
     display: flex;
     flex-wrap: wrap;
