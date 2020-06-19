@@ -285,6 +285,21 @@ function mathomo_add_block_editor_assets() {
 }
 add_action( 'enqueue_block_editor_assets', 'mathomo_add_block_editor_assets' );
 
+/**
+ * Register new block styles.
+ */
+function mathomo_register_block_styles() {
+    // Add quotes to blockquotes
+    register_block_style(
+        'core/pullquote',
+        array(
+            'name' => 'with-quotes',
+            'label' => __( 'With Quotes', 'mathomo' )
+        )
+    );
+}
+add_action( 'init', 'mathomo_register_block_styles' );
+
 // Load template helper functions
 require_once get_template_directory() . '/inc/class-htmler.php';
 require_once get_template_directory() . '/inc/template-functions.php';
