@@ -277,6 +277,13 @@ function mathomo_get_default_color( $name ) {
     }
 }
 
+/**
+ * Add block editor styling css.
+ */
+function mathomo_add_block_editor_assets() {
+    wp_enqueue_style( 'mathomo-editor-style', mathomo_get_uri( '/assets/css/editor-style.css' ), array( 'wp-block-editor' ), MATHOMO_VERSION );
+}
+add_action( 'enqueue_block_editor_assets', 'mathomo_add_block_editor_assets' );
 
 // Load template helper functions
 require_once get_template_directory() . '/inc/class-htmler.php';
