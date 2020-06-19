@@ -1,0 +1,33 @@
+/**
+ * Block Editor (reset) styling - For a better WYSIWYG
+ *
+ * @package Mathomo
+ */
+
+ .editor-post-title__block .editor-post-title__input {
+    font-family: tahoma,helvetica,sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    padding:  0 0 1.5em;
+    margin: 0;
+}
+
+.wp-block {
+    max-width: 800px;
+}
+
+.editor-styles-wrapper > div {
+    font-family: tahoma,helvetica,sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    letter-spacing: .02em;
+}
+
+.block-editor-rich-text__editable a {
+    color: inherit;
+}
+
+.editor-styles-wrapper > div p {
+    margin: 1em 0;
+}
