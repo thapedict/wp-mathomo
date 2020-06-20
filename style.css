@@ -477,6 +477,11 @@ blockquote p:first-child {
     margin-top: -1em;
 }
 
+.wp-block-columns.alignfull > .wp-block-column > p {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
 /********************/
 /** Comments **/
 /********************/
