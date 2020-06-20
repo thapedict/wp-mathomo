@@ -125,3 +125,7 @@
     float: right;
     margin-top: -1em;
 }
+
+.wp-block-button__link {
+    border-radius: 0;
+}
