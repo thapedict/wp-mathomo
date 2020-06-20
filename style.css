@@ -496,6 +496,25 @@ blockquote p:first-child {
     margin-right: 1em;
 }
 
+.wp-block-separator {
+    border: none;
+}
+
+.wp-block-separator:not(.is-style-dots) {
+    width: 20%;
+    margin-left: 40%;
+    height: 2px;
+}
+
+.wp-block-separator:not(.is-style-dots):not(.has-background) {
+    background-color: #ccc;
+}
+
+.wp-block-separator.is-style-wide:not(#important) {
+    width: 60%;
+    margin-left: 20%;
+}
+
 /********************/
 /** Comments **/
 /********************/
