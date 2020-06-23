@@ -12,11 +12,12 @@ A very simple and modern starter theme perfect for your next project.
 
 == Description ==
 
-A very modern feel, light weight and extendable starter theme.
+A very modern feel, light weight and extendable block based starter theme.
 Because of it's highly extenable nature, it can be used to create various types of websites from blog, business, portfolio or even e-commerce websites that are customizable in many different ways.
 
 = Theme Features =
 
+* Block first approach
 * Mobile Responsive
 * Custom colors
 * Full block support
