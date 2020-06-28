@@ -404,7 +404,7 @@ if( ! function_exists( 'mathomo_print_gallery_thumbs' ) ):
     function mathomo_print_gallery_thumbs() {
         $galleries = get_post_galleries( 0, false );
 
-        $no_of_thumbs = 3;
+        $no_of_thumbs = (int) apply_filters( 'mathomo_gallery_thumbs_count', 4 );
 
         $gallery = current( $galleries );
         $flattened = $gallery[ 'src' ];
