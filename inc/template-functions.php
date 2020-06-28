@@ -406,14 +406,18 @@ if( ! function_exists( 'mathomo_print_gallery_thumbs' ) ):
 
         $no_of_thumbs = 3;
 
-        $flattened = array_shift( $galleries );
-        $flattened = $flattened[ 'src' ];
+        $gallery = current( $galleries );
+        $flattened = $gallery[ 'src' ];
 
         // if we don't have all required thumbs, try and get them from other galleries
-        if( $no_of_thumbs > count( $flattened ) ) {
-            foreach( $galleries as $k => $g ) {
-                $flattened = array_merge( $flattened, $galleries[ $k ][ 'src' ] );
+        while( $no_of_thumbs > count( $flattened ) ) {
+            $gallery = next( $galleries );
+
+            if( false === $gallery ) { // no more galleries?
+                break;
             }
+
+            $flattened = array_merge( $flattened, $gallery[ 'src' ] );
         }
 
         $flattened = array_slice( $flattened, 0, $no_of_thumbs );
