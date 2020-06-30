@@ -301,7 +301,9 @@ function mathomo_register_block_styles() {
 add_action( 'init', 'mathomo_register_block_styles' );
 
 // Load template helper functions
-require_once get_template_directory() . '/inc/class-htmler.php';
+if( ! class_exists( 'HTMLER' ) ) {
+    require_once get_template_directory() . '/inc/class-htmler.php';
+}
 require_once get_template_directory() . '/inc/template-functions.php';
 
 // Load customizer settings
