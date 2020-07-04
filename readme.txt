@@ -6,7 +6,7 @@ Stable tag: 1.0.0
 Version: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: full-width-template, one-column, blog, e-commerce, post-formats, sticky-post, featured-images, editor-style, block-styles, wide-blocks, theme-options, custom-header, custom-menu, custom-colors, custom-logo, threaded-comments, footer-widgets, translation-ready, accessibility-ready
+Tags: full-width-template, one-column, blog, e-commerce, post-formats, sticky-post, featured-images, editor-style, block-styles, wide-blocks, theme-options, custom-header, custom-menu, custom-colors, custom-logo, threaded-comments, footer-widgets, translation-ready
 
 A very simple and modern starter theme perfect for your next project.
 
