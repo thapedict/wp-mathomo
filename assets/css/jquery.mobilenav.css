@@ -1,6 +1,6 @@
 /**
  * jQuery MobileNav CSS
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Thapelo Moeti
  * License: GNU General Public License v2 or later
  */
@@ -155,7 +155,8 @@
 
 .mobilenav-full-menu .drop-menu-icon {
     float: right;
-    padding: 0 0 0 0.4em;
+    padding: 0 0.2em;
+    margin-left: 0.2em;
 }
 
 .mobilenav-mobile-menu-wrap .drop-menu-icon {
