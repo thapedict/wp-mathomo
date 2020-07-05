@@ -12,8 +12,8 @@ A very simple and modern starter theme perfect for your next project.
 
 == Description ==
 
-A very modern feel, light weight and extendable block based starter theme.
-Because of it's highly extenable nature, it can be used to create various types of websites from blog, business, portfolio or even e-commerce websites that are customizable in many different ways.
+A very modern feel, light weight and extendible block based starter theme.
+Because of it's highly extendible nature, it can be used to create various types of websites from blog, business, portfolio or even e-commerce websites that are customizable in many different ways.
 
 = Theme Features =
 
@@ -42,7 +42,11 @@ GNU General Public License for more details.
 Font Awesome Free 5.13.0 by @fontawesome - https://fontawesome.com
 License - https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
 
-== Installation ==
+Cover image from @unsplash - https://unsplash.com
+License - https (Unsplash License)
+
+Categories & product images by @Woocommerce - https://woocommerce.com
+License - https://www.gnu.org/licenses/gpl-3.0.html (GPLv3)
 
 == Changelog ==
 
