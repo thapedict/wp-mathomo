@@ -58,7 +58,8 @@ if( ! function_exists( 'mathomo_print_header_menu' ) ):
         );
 
         HTMLER::i_e( '', array(
-                                'class' => 'search-form-btn fas fa-search'
+                                'class' => 'search-form-btn fas fa-search',
+                                'tabindex' => '0'
                             )
                     );
 
@@ -67,7 +68,8 @@ if( ! function_exists( 'mathomo_print_header_menu' ) ):
             HTMLER::i_kses_e(
                 '<b class="items-count">' . $cart_items . '</b>',
                 array(
-                        'class' => 'mini-cart-btn fas fa-shopping-basket'
+                        'class' => 'mini-cart-btn fas fa-shopping-basket',
+                        'tabindex' => '0'
                     )
             );
         }
@@ -340,7 +342,7 @@ if( ! function_exists( 'mathomo_print_mini_cart' ) ):
             return;
         }
 
-        echo '<div class="header-mini-cart-wrap"><span id="close" class="fas fa-times"></span>';
+        echo '<div class="header-mini-cart-wrap"><span id="close" class="fas fa-times" tabindex="0"></span>';
         
         the_widget( 'WC_Widget_Cart', 'title=' );
 
@@ -360,12 +362,14 @@ if( ! function_exists( 'mathomo_print_mobile_drawer' ) ):
         $buttons[] = HTMLER::i( '', array(
             'id' => 'tdt-mobilenav-btn',
             'class' => 'fas fa-bars',
-            'for' => '#header-menu'
+            'for' => '#header-menu',
+            'tabindex' => '0'
             ) );
         
         // search form button
         $buttons[] = HTMLER::i( '', array(
-            'class' => 'search-form-btn fas fa-search'
+            'class' => 'search-form-btn fas fa-search',
+            'tabindex' => '0'
         ) );
 
         // shopping cart button
@@ -373,7 +377,8 @@ if( ! function_exists( 'mathomo_print_mobile_drawer' ) ):
         if( mathomo_is_woocommerce_activated() && $show_cart ) {
             $cart_items = WC()->cart->cart_contents_count;
             $buttons[] = HTMLER::i_kses( '<b class="items-count">' . $cart_items . '</b>', array(
-                'class' => 'mini-cart-btn fas fa-shopping-basket'
+                'class' => 'mini-cart-btn fas fa-shopping-basket',
+                'tabindex' => '0'
             ) );
         }
 
