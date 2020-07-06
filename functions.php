@@ -5,7 +5,7 @@
  * @package Mathomo
  */
 
-define( 'MATHOMO_VERSION', '1.0.0' );
+define( 'MATHOMO_VERSION', '1.0.1' );
 
 /**
  * Get the escaped template directory URI.
