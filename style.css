@@ -133,6 +133,10 @@ article:not(.post-excerpt) > * {
     width: 100%;
 }
 
+.blog .main-loop > article:first-child {
+    margin-top: 4em;
+}
+
 article.post-excerpt:after {
     display: table;
     content: "";
