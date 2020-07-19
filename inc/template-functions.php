@@ -47,15 +47,35 @@ if( ! function_exists( 'mathomo_print_header_menu' ) ):
      * Prints header menu
      */
     function mathomo_print_header_menu() {
+        $default_args = array(
+            'container_class' => '',
+            'container_id' => '',
+            'menu_id' => 'header-menu',
+            'menu_class' => 'nav-menu',
+            'theme_location' => 'header'
+        );
+
+        $user_args = (array) apply_filters( 'mathomo_header_menu_args', $default_args );
+        $args = wp_parse_args( $user_args, $default_args );
+
         echo '<div class="header-menu-wrap">';
 
-        wp_nav_menu(
-            array(
-                'theme_location' => 'header',
-                'menu_id' => 'header-menu',
-                'menu_class' => 'nav-menu'
-            )
-        );
+        if( has_nav_menu( 'header' ) ) {
+            wp_nav_menu( $args );
+        } else {
+            array_walk( $args, 'esc_attr' );
+
+            // re-map classes
+            $args = array(
+                'show_home' => 1,
+                'container' => 'nav',
+                'menu_id' => $args[ 'container_id' ],
+                'menu_class' => $args[ 'container_class' ],
+                'before' => sprintf('<ul id="%s" class="%s">', $args[ 'menu_id' ], $args[ 'menu_class' ] )
+            );
+            
+            wp_page_menu( $args );
+        }
 
         HTMLER::i_e( '', array(
                                 'class' => 'search-form-btn fas fa-search',
