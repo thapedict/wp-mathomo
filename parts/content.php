@@ -12,10 +12,6 @@
 
         the_title( '<h1 class="page-title">', '</h1>' );
 
-        if( 'post' === get_post_type() ) {
-            mathomo_print_post_meta();
-        }
-
         if( has_post_thumbnail() && ! post_password_required() ) {
             print '<div class="post-thumbnail">';
                 the_post_thumbnail( array( 1024, 1024 ) );
@@ -25,7 +21,7 @@
 
     <div class="post-content">
         <?php
-            the_content( mathomo_get_read_more_text() );
+            the_content();
         ?>
     </div>
 
@@ -35,23 +31,9 @@
         mathomo_edit_post_link();
     ?>
 
-    <div class="post-tags">
-        <?php
-            the_tags(
-                '<span class="label">' . __( 'Tags', 'mathomo' ) . '</span><span class="tag">',
-                '</span>, <span class="tag">',
-                '</span>'
-                );
-        ?>
-    </div>
-
     <?php
         do_action( 'after_post_content' );
         
         mathomo_prev_next_post_link();
-
-        if( mathomo_show_post_comments() ) {
-            comments_template();
-        }
     ?>
 </article>
