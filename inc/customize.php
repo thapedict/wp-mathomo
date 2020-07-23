@@ -6,6 +6,19 @@
  */
 
 /**
+ * Sanitize checkbox.
+ * 
+ * @since 1.0.2
+ * 
+ * @param bool $checked Value of passed input.
+ * 
+ * @return bool TRUE when checked, FALSE when not checked.
+ */
+function mathomo_sanitize_checkbox( $checked ) {
+    return (bool) $checked;
+}
+
+/**
  *  Change WordPress default.
  * 
  * @param WP_Customize_Manager $customize The WP_Customize_Manager.
