@@ -48,6 +48,7 @@ header .custom-logo {
 
 header .header-menu-wrap {
     display: flex;
+    align-items: center;
 }
 
 .header-menu-wrap > i {
@@ -56,7 +57,8 @@ header .header-menu-wrap {
     padding: 0 0.3em;
 }
 
-.header-menu-wrap > div {
+.header-menu-wrap > div,
+.header-menu-wrap > nav {
     flex-grow: 1;
 }
 
