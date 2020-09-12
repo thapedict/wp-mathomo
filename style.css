@@ -785,6 +785,11 @@ footer .copyright-notice:after {
         margin-left: calc((100%/8) * -2);
     }
 
+    body:not(.with-sidebar) .post-content > .alignwide {
+        width: calc(100% / (10/12));
+        margin-left: calc((100%/8) * -1);
+    }
+
     .footer-cols > div {
         padding-left: 0;
         padding-top: 2em;
