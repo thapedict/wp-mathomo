@@ -1,11 +1,11 @@
 /**
 Theme Name: Mathomo
 Theme URI:
-Version: 1.0.1
+Version: 1.0.2
 Author: Thapelo Moeti
 Author URI: https://www.thapedict.co.za/
 Requires at least: 5.3.2
-Tested up to: 5.4.2
+Tested up to: 5.5.1
 Requires PHP: 5.6
 Text Domain: mathomo
 License: GNU General Public License v2 or later
@@ -22,7 +22,7 @@ is distributed under the terms of the GNU GPL.
 /** Header **/
 /********************/
 body > header {
-    border-bottom: 2px solid #eee;
+    box-shadow: 0 0 5px black;
 }
 
 .site-name {
@@ -68,8 +68,40 @@ header #header-menu {
     justify-content: flex-end;
 }
 
+#header-menu > .menu-item {
+    position: relative;
+    border-bottom: 3px solid transparent;
+}
+
 #header-menu .current_page_item {
-    border-bottom: 3px solid;
+    border-color: black;
+}
+
+#header-menu > .menu-item:focus:after,
+#header-menu > .menu-item:hover:after {
+    content: close-quote;
+    position: absolute;
+    display: block;
+    bottom: -3px;
+    left: 0;
+    height: 3px;
+    background-color: #404;
+    width: 100%;
+    animation: growwidth 0.5s;
+}
+
+#header-menu > .menu-item:focus,
+#header-menu > .menu-item:hover {
+    border-color: transparent;
+}
+
+@keyframes growwidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 .mobilenav-full-menu .drop-menu-icon {

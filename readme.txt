@@ -1,9 +1,9 @@
 === Mathomo ===
 Contributors: thapedict
 Requires at least: 5.3
-Tested up to: 5.4.2
-Stable tag: 1.0.1
-Version: 1.0.1
+Tested up to: 5.5.1
+Stable tag: 1.0.2
+Version: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: full-width-template, one-column, blog, e-commerce, post-formats, sticky-post, featured-images, editor-style, block-styles, wide-blocks, theme-options, custom-header, custom-menu, custom-colors, custom-logo, threaded-comments, footer-widgets, translation-ready
@@ -49,6 +49,11 @@ Categories & product images by @Woocommerce - https://woocommerce.com
 License - https://www.gnu.org/licenses/gpl-3.0.html (GPLv3)
 
 == Changelog ==
+
+= 1.0.2 =
+
+* Bug fixes
+* Minor CSS (styling) updates.
 
 = 1.0.1 =
 
