@@ -561,6 +561,12 @@ blockquote p:first-child {
     border-bottom: none;
 }
 
+footer.comment-meta .comment-metadata {
+    font-size: 85%;
+    color: #696969;
+    padding: 0.5em 0 1em;
+}
+
 .older-comments .comment-reply-link {
     font-size: 95%;
     font-weight: bold;
