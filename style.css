@@ -95,6 +95,17 @@ header #header-menu {
     border-color: transparent;
 }
 
+#header-menu > .menu-item.cta {
+    background-color: #101010;
+    color: #fff;
+    margin: 0 0.5em;
+    border-radius: 3px;
+}
+
+#header-menu > .menu-item.cta:hover {
+    background-color: #40464d;
+}
+
 @keyframes growwidth {
     from {
         width: 0;
