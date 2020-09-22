@@ -17,6 +17,11 @@
     max-width: 800px;
 }
 
+.block-editor-block-list__block {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .editor-styles-wrapper > div h1,
 .editor-styles-wrapper > div h2,
 .editor-styles-wrapper > div h3,
@@ -166,6 +171,8 @@
 
 .wp-block-separator {
     border: none;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 .wp-block-separator:not(.is-style-dots) {
