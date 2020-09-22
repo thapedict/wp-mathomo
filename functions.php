@@ -297,6 +297,14 @@ function mathomo_register_block_styles() {
             'label' => __( 'With Quotes', 'mathomo' )
         )
     );
+    // blockcover
+    register_block_style(
+        'core/cover',
+        array(
+            'name' => 'leftside',
+            'label' => __( 'Left Side', 'mathomo' )
+        )
+    );
 }
 add_action( 'init', 'mathomo_register_block_styles' );
 

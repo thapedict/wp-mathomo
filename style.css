@@ -832,6 +832,11 @@ footer .copyright-notice:after {
         max-width: 800px;
     }
 
+    .is-style-leftside.alignfull  .wp-block-cover__inner-container {
+        max-width: 400px;
+        margin-left: -50%;
+    }
+
     .footer-cols > div {
         padding-left: 0;
         padding-top: 2em;
