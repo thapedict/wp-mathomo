@@ -220,6 +220,10 @@ article.post-excerpt .post-excerpt {
     margin-bottom: 2em;
 }
 
+.is-grid .wp-block-latest-posts__featured-image img {
+    width: 100%;
+}
+
 article a.post-edit-link {
     font-weight: bold;
     font-size: 95%;
