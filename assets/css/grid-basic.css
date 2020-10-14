@@ -1,6 +1,6 @@
 /*!
 * TS Grid System
-* @version 1.0.0
+* @version 1.0.1
 * @author Thapelo Moeti
 */
 .container {
@@ -21,7 +21,8 @@
 .ts-4 {
   display: flex;
   flex-flow: row wrap;
-  margin: 0; }
+  margin: 0 -16px;
+  padding: 0; }
   .ts-1 > *,
   .ts-1-2 > *,
   .ts-1-3 > *,
@@ -30,7 +31,7 @@
   .ts-3 > *,
   .ts-3-1 > *,
   .ts-4 > * {
-    padding: 16px; }
+    padding: 0 16px; }
   .ts-1 > li,
   .ts-1-2 > li,
   .ts-1-3 > li,
@@ -40,6 +41,9 @@
   .ts-3-1 > li,
   .ts-4 > li {
     display: block; }
+
+.ts-no-gutter > * {
+  padding: 0; }
 
 .ts-1 > * {
   width: 100%; }
@@ -121,7 +125,8 @@
   .ts-l-4 {
     display: flex;
     flex-flow: row wrap;
-    margin: 0; }
+    margin: 0 -16px;
+    padding: 0; }
     .ts-l-1 > *,
     .ts-l-1-2 > *,
     .ts-l-1-3 > *,
@@ -130,7 +135,7 @@
     .ts-l-3 > *,
     .ts-l-3-1 > *,
     .ts-l-4 > * {
-      padding: 16px; }
+      padding: 0 16px; }
     .ts-l-1 > li,
     .ts-l-1-2 > li,
     .ts-l-1-3 > li,
@@ -140,6 +145,8 @@
     .ts-l-3-1 > li,
     .ts-l-4 > li {
       display: block; }
+  .ts-l-no-gutter > * {
+    padding: 0; }
   .ts-l-1 > * {
     width: 100%; }
   .ts-l-1-2 > * {
@@ -198,7 +205,8 @@
   .ts-dl-4 {
     display: flex;
     flex-flow: row wrap;
-    margin: 0; }
+    margin: 0 -16px;
+    padding: 0; }
     .ts-dl-1 > *,
     .ts-dl-1-2 > *,
     .ts-dl-1-3 > *,
@@ -207,7 +215,7 @@
     .ts-dl-3 > *,
     .ts-dl-3-1 > *,
     .ts-dl-4 > * {
-      padding: 16px; }
+      padding: 0 16px; }
     .ts-dl-1 > li,
     .ts-dl-1-2 > li,
     .ts-dl-1-3 > li,
@@ -217,6 +225,8 @@
     .ts-dl-3-1 > li,
     .ts-dl-4 > li {
       display: block; }
+  .ts-dl-no-gutter > * {
+    padding: 0; }
   .ts-dl-1 > * {
     width: 100%; }
   .ts-dl-1-2 > * {
@@ -275,7 +285,8 @@
   .ts-d-4 {
     display: flex;
     flex-flow: row wrap;
-    margin: 0; }
+    margin: 0 -16px;
+    padding: 0; }
     .ts-d-1 > *,
     .ts-d-1-2 > *,
     .ts-d-1-3 > *,
@@ -284,7 +295,7 @@
     .ts-d-3 > *,
     .ts-d-3-1 > *,
     .ts-d-4 > * {
-      padding: 16px; }
+      padding: 0 16px; }
     .ts-d-1 > li,
     .ts-d-1-2 > li,
     .ts-d-1-3 > li,
@@ -294,6 +305,8 @@
     .ts-d-3-1 > li,
     .ts-d-4 > li {
       display: block; }
+  .ts-d-no-gutter > * {
+    padding: 0; }
   .ts-d-1 > * {
     width: 100%; }
   .ts-d-1-2 > * {
@@ -353,7 +366,8 @@
   .ts-ns-4 {
     display: flex;
     flex-flow: row wrap;
-    margin: 0; }
+    margin: 0 -16px;
+    padding: 0; }
     .ts-ns-1 > *,
     .ts-ns-1-2 > *,
     .ts-ns-1-3 > *,
@@ -362,7 +376,7 @@
     .ts-ns-3 > *,
     .ts-ns-3-1 > *,
     .ts-ns-4 > * {
-      padding: 16px; }
+      padding: 0 16px; }
     .ts-ns-1 > li,
     .ts-ns-1-2 > li,
     .ts-ns-1-3 > li,
@@ -372,6 +386,8 @@
     .ts-ns-3-1 > li,
     .ts-ns-4 > li {
       display: block; }
+  .ts-ns-no-gutter > * {
+    padding: 0; }
   .ts-ns-1 > * {
     width: 100%; }
   .ts-ns-1-2 > * {
@@ -430,7 +446,8 @@
   .ts-sm-4 {
     display: flex;
     flex-flow: row wrap;
-    margin: 0; }
+    margin: 0 -16px;
+    padding: 0; }
     .ts-sm-1 > *,
     .ts-sm-1-2 > *,
     .ts-sm-1-3 > *,
@@ -439,7 +456,7 @@
     .ts-sm-3 > *,
     .ts-sm-3-1 > *,
     .ts-sm-4 > * {
-      padding: 16px; }
+      padding: 0 16px; }
     .ts-sm-1 > li,
     .ts-sm-1-2 > li,
     .ts-sm-1-3 > li,
@@ -449,6 +466,8 @@
     .ts-sm-3-1 > li,
     .ts-sm-4 > li {
       display: block; }
+  .ts-sm-no-gutter > * {
+    padding: 0; }
   .ts-sm-1 > * {
     width: 100%; }
   .ts-sm-1-2 > * {
@@ -507,7 +526,8 @@
   .ts-m-4 {
     display: flex;
     flex-flow: row wrap;
-    margin: 0; }
+    margin: 0 -16px;
+    padding: 0; }
     .ts-m-1 > *,
     .ts-m-1-2 > *,
     .ts-m-1-3 > *,
@@ -516,7 +536,7 @@
     .ts-m-3 > *,
     .ts-m-3-1 > *,
     .ts-m-4 > * {
-      padding: 16px; }
+      padding: 0 16px; }
     .ts-m-1 > li,
     .ts-m-1-2 > li,
     .ts-m-1-3 > li,
@@ -526,6 +546,8 @@
     .ts-m-3-1 > li,
     .ts-m-4 > li {
       display: block; }
+  .ts-m-no-gutter > * {
+    padding: 0; }
   .ts-m-1 > * {
     width: 100%; }
   .ts-m-1-2 > * {
@@ -584,7 +606,8 @@
   .ts-s-4 {
     display: flex;
     flex-flow: row wrap;
-    margin: 0; }
+    margin: 0 -16px;
+    padding: 0; }
     .ts-s-1 > *,
     .ts-s-1-2 > *,
     .ts-s-1-3 > *,
@@ -593,7 +616,7 @@
     .ts-s-3 > *,
     .ts-s-3-1 > *,
     .ts-s-4 > * {
-      padding: 16px; }
+      padding: 0 16px; }
     .ts-s-1 > li,
     .ts-s-1-2 > li,
     .ts-s-1-3 > li,
@@ -603,6 +626,8 @@
     .ts-s-3-1 > li,
     .ts-s-4 > li {
       display: block; }
+  .ts-s-no-gutter > * {
+    padding: 0; }
   .ts-s-1 > * {
     width: 100%; }
   .ts-s-1-2 > * {
@@ -661,7 +686,8 @@
   .ts-xs-4 {
     display: flex;
     flex-flow: row wrap;
-    margin: 0; }
+    margin: 0 -16px;
+    padding: 0; }
     .ts-xs-1 > *,
     .ts-xs-1-2 > *,
     .ts-xs-1-3 > *,
@@ -670,7 +696,7 @@
     .ts-xs-3 > *,
     .ts-xs-3-1 > *,
     .ts-xs-4 > * {
-      padding: 16px; }
+      padding: 0 16px; }
     .ts-xs-1 > li,
     .ts-xs-1-2 > li,
     .ts-xs-1-3 > li,
@@ -680,6 +706,8 @@
     .ts-xs-3-1 > li,
     .ts-xs-4 > li {
       display: block; }
+  .ts-xs-no-gutter > * {
+    padding: 0; }
   .ts-xs-1 > * {
     width: 100%; }
   .ts-xs-1-2 > * {
@@ -730,7 +758,7 @@
 @charset "UTF-8";
 /*!
 * Basic Style
-* @version 1.0.0
+* @version 1.0.1
 * @author Thapelo Moeti
 */
 * {
@@ -879,7 +907,8 @@ hr {
 
 img {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+  border: 0; }
 
 img[src=""] {
   display: none; }
@@ -917,6 +946,10 @@ nav ul,
 nav ol {
   list-style: none;
   list-style-image: none; }
+
+mark {
+  background: #ff0;
+  color: #000; }
 
 pre {
   padding: 1em;
@@ -1159,7 +1192,7 @@ input[type=search] {
   -webkit-appearance: textfield; }
 
 button[disabled],
-html input[disabled] {
+input[disabled] {
   cursor: default; }
 
 button,
@@ -1206,7 +1239,7 @@ button:focus,
 input[type=submit]:focus,
 input[type=reset]:focus {
   transform: scale(1.05, 1.05);
-  transition: transform 0.3s; }
+  transition: transform 0.2s; }
 
 button,
 .button,
@@ -1216,6 +1249,10 @@ input[type=reset] {
 
 a.button {
   text-decoration: none; }
+
+input:focus,
+textarea:focus {
+  outline: none; }
 
 /**
 * Default CSS menu
