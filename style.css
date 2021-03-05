@@ -73,7 +73,8 @@ header #header-menu {
     border-bottom: 3px solid transparent;
 }
 
-#header-menu .current_page_item {
+#header-menu .current_page_item,
+#header-menu .current-menu-item {
     border-color: black;
 }
 
